@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>go-antman</title>
+      <link href="/2020/01/13/go-antman/"/>
+      <url>/2020/01/13/go-antman/</url>
+      
+        <content type="html"><![CDATA[<h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+            <tag> golang </tag>
+            
+            <tag> agent </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>go-build</title>
       <link href="/2020/01/09/go-build/"/>
       <url>/2020/01/09/go-build/</url>
