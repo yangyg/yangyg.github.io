@@ -46,21 +46,24 @@
   };
 </script>
 
-  <meta name="description" content="golang gin框架 跨域访问配置代码中间件代码123456789101112131415161718192021package middlewareimport (	&quot;github.com&#x2F;gin-contrib&#x2F;cors&quot;	&quot;github.com&#x2F;gin-gonic&#x2F;gin&quot;)&#x2F;&#x2F; Cors 跨域配置func Cors() gin.HandlerFunc &amp;#123;	config :&#x3D;">
+  <meta name="description" content="golang 文档资料golang booksgopllearnxinyminutesgo dev">
 <meta property="og:type" content="article">
-<meta property="og:title" content="golang gin-cors">
-<meta property="og:url" content="https://cryingsky.coding.me/hexo-blog/2020/01/07/gin-cors/index.html">
+<meta property="og:title" content="golang">
+<meta property="og:url" content="https://cryingsky.coding.me/hexo-blog/2020/01/14/golang/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="golang gin框架 跨域访问配置代码中间件代码123456789101112131415161718192021package middlewareimport (	&quot;github.com&#x2F;gin-contrib&#x2F;cors&quot;	&quot;github.com&#x2F;gin-gonic&#x2F;gin&quot;)&#x2F;&#x2F; Cors 跨域配置func Cors() gin.HandlerFunc &amp;#123;	config :&#x3D;">
+<meta property="og:description" content="golang 文档资料golang booksgopllearnxinyminutesgo dev">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-01-07T09:02:53.000Z">
-<meta property="article:modified_time" content="2020-01-07T09:25:29.828Z">
+<meta property="og:image" content="https://cryingsky.coding.me/2020/01/14/golang/Go+data+types.svg">
+<meta property="og:image" content="https://cryingsky.coding.me/2020/01/14/golang/Go+numeric+types.svg">
+<meta property="article:published_time" content="2020-01-14T06:46:09.000Z">
+<meta property="article:modified_time" content="2020-01-15T05:27:21.697Z">
 <meta property="article:author" content="Y">
 <meta property="article:tag" content="go">
-<meta property="article:tag" content="gin">
+<meta property="article:tag" content="golang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cryingsky.coding.me/2020/01/14/golang/Go+data+types.svg">
 
-<link rel="canonical" href="https://cryingsky.coding.me/hexo-blog/2020/01/07/gin-cors/">
+<link rel="canonical" href="https://cryingsky.coding.me/hexo-blog/2020/01/14/golang/">
 
 
 <script id="page-configurations">
@@ -72,7 +75,7 @@
   };
 </script>
 
-  <title>golang gin-cors | blog</title>
+  <title>golang | blog</title>
   
 
 
@@ -210,7 +213,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://cryingsky.coding.me/hexo-blog/2020/01/07/gin-cors/">
+    <link itemprop="mainEntityOfPage" href="https://cryingsky.coding.me/hexo-blog/2020/01/14/golang/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -223,7 +226,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          golang gin-cors
+          golang
         </h1>
 
         <div class="post-meta">
@@ -232,10 +235,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-01-07 17:02:53 / 修改时间：17:25:29" itemprop="dateCreated datePublished" datetime="2020-01-07T17:02:53+08:00">2020-01-07</time>
+              <time title="创建时间：2020-01-14 14:46:09" itemprop="dateCreated datePublished" datetime="2020-01-14T14:46:09+08:00">2020-01-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-15 13:27:21" itemprop="dateModified" datetime="2020-01-15T13:27:21+08:00">2020-01-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -261,7 +270,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>694</span>
+              <span>402</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -280,11 +289,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="golang-gin框架-跨域访问配置代码"><a href="#golang-gin框架-跨域访问配置代码" class="headerlink" title="golang gin框架 跨域访问配置代码"></a>golang gin框架 跨域访问配置代码</h1><h2 id="中间件代码"><a href="#中间件代码" class="headerlink" title="中间件代码"></a>中间件代码</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> middleware</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"github.com/gin-contrib/cors"</span></span><br><span class="line">	<span class="string">"github.com/gin-gonic/gin"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Cors 跨域配置</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Cors</span><span class="params">()</span> <span class="title">gin</span>.<span class="title">HandlerFunc</span></span> &#123;</span><br><span class="line">	config := cors.DefaultConfig()</span><br><span class="line">	config.AllowMethods = []<span class="keyword">string</span>&#123;<span class="string">"GET"</span>, <span class="string">"POST"</span>, <span class="string">"PUT"</span>, <span class="string">"PATCH"</span>, <span class="string">"DELETE"</span>, <span class="string">"HEAD"</span>, <span class="string">"OPTIONS"</span>&#125;</span><br><span class="line">	config.AllowHeaders = []<span class="keyword">string</span>&#123;<span class="string">"Origin"</span>, <span class="string">"Content-Length"</span>, <span class="string">"Content-Type"</span>, <span class="string">"Cookie"</span>&#125;</span><br><span class="line">	<span class="keyword">if</span> gin.Mode() == gin.ReleaseMode &#123;</span><br><span class="line">		<span class="comment">// 生产环境需要配置跨域域名，否则403</span></span><br><span class="line">		config.AllowOrigins = []<span class="keyword">string</span>&#123;<span class="string">"http://www.example.com"</span>&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		config.AllowOrigins = []<span class="keyword">string</span>&#123;<span class="string">"*"</span>&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	config.AllowCredentials = <span class="literal">true</span></span><br><span class="line">	<span class="keyword">return</span> cors.New(config)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="golang-文档资料"><a href="#golang-文档资料" class="headerlink" title="golang 文档资料"></a>golang 文档资料</h1><p><a href="https://books.studygolang.com/" target="_blank" rel="noopener">golang books</a><br><a href="https://books.studygolang.com/gopl-zh/ch3/ch3-01.html" target="_blank" rel="noopener">gopl</a><br><a href="https://learnxinyminutes.com/docs/zh-cn/go-cn/" target="_blank" rel="noopener">learnxinyminutes</a><br><a href="https://go.dev/" target="_blank" rel="noopener">go dev</a></p>
 <a id="more"></a>
 
-<h2 id="路由配置"><a href="#路由配置" class="headerlink" title="路由配置"></a>路由配置</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router := gin.Default()</span><br><span class="line"><span class="comment">// cors 跨域设置</span></span><br><span class="line">router.Use(middleware.Cors())</span><br></pre></td></tr></table></figure>
+<h1 id="golang-data-type"><a href="#golang-data-type" class="headerlink" title="golang data type"></a>golang data type</h1><p>从底层而言，所有的数据都是由比特组成，但计算机一般操作的是固定大小的数，如整数、浮点数、比特数组、内存地址等。进一步将这些数组织在一起，就可表达更多的对象，例如数据包、像素点、诗歌，甚至其他任何对象。Go语言提供了丰富的数据组织形式，这依赖于Go语言内置的数据类型。这些内置的数据类型，兼顾了硬件的特性和表达复杂数据结构的便捷性。</p>
+<p>Go语言将数据类型分为四类：基础类型、复合类型、引用类型和接口类型。本章介绍基础类型，包括：数字、字符串和布尔型。复合数据类型——数组和结构体——是通过组合简单类型，来表达更加复杂的数据结构。引用类型包括指针、切片、字典、函数、通道，虽然数据种类很多，但它们都是对程序中一个变量或状态的间接引用。这意味着对任一引用类型数据的修改都会影响所有该引用的拷贝。</p>
+<img src="/2020/01/14/golang/Go+data+types.svg" class="" title="Golang data types">
+
+<img src="/2020/01/14/golang/Go+numeric+types.svg" class="" title="Golang numeric types">
+
+
+
     </div>
 
     
@@ -294,7 +309,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/go/" rel="tag"># go</a>
-              <a href="/tags/gin/" rel="tag"># gin</a>
+              <a href="/tags/golang/" rel="tag"># golang</a>
           </div>
 
         
@@ -303,13 +318,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2018/09/17/rails-cors/" rel="prev" title="rails cors">
-      <i class="fa fa-chevron-left"></i> rails cors
+    <a href="/2020/01/13/go-antman/" rel="prev" title="go-antman">
+      <i class="fa fa-chevron-left"></i> go-antman
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/01/07/go-jwt/" rel="next" title="go-jwt">
-      go-jwt <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -369,7 +381,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-gin框架-跨域访问配置代码"><span class="nav-number">1.</span> <span class="nav-text">golang gin框架 跨域访问配置代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#中间件代码"><span class="nav-number">1.1.</span> <span class="nav-text">中间件代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由配置"><span class="nav-number">1.2.</span> <span class="nav-text">路由配置</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-文档资料"><span class="nav-number">1.</span> <span class="nav-text">golang 文档资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-data-type"><span class="nav-number">2.</span> <span class="nav-text">golang data type</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>golang</title>
+      <link href="/2020/01/14/golang/"/>
+      <url>/2020/01/14/golang/</url>
+      
+        <content type="html"><![CDATA[<h1 id="golang-文档资料"><a href="#golang-文档资料" class="headerlink" title="golang 文档资料"></a>golang 文档资料</h1><p><a href="https://books.studygolang.com/" target="_blank" rel="noopener">golang books</a><br><a href="https://books.studygolang.com/gopl-zh/ch3/ch3-01.html" target="_blank" rel="noopener">gopl</a><br><a href="https://learnxinyminutes.com/docs/zh-cn/go-cn/" target="_blank" rel="noopener">learnxinyminutes</a><br><a href="https://go.dev/" target="_blank" rel="noopener">go dev</a></p><a id="more"></a><h1 id="golang-data-type"><a href="#golang-data-type" class="headerlink" title="golang data type"></a>golang data type</h1><p>从底层而言，所有的数据都是由比特组成，但计算机一般操作的是固定大小的数，如整数、浮点数、比特数组、内存地址等。进一步将这些数组织在一起，就可表达更多的对象，例如数据包、像素点、诗歌，甚至其他任何对象。Go语言提供了丰富的数据组织形式，这依赖于Go语言内置的数据类型。这些内置的数据类型，兼顾了硬件的特性和表达复杂数据结构的便捷性。</p><p>Go语言将数据类型分为四类：基础类型、复合类型、引用类型和接口类型。本章介绍基础类型，包括：数字、字符串和布尔型。复合数据类型——数组和结构体——是通过组合简单类型，来表达更加复杂的数据结构。引用类型包括指针、切片、字典、函数、通道，虽然数据种类很多，但它们都是对程序中一个变量或状态的间接引用。这意味着对任一引用类型数据的修改都会影响所有该引用的拷贝。</p><img src="/2020/01/14/golang/Go+data+types.svg" class="" title="Golang data types"><img src="/2020/01/14/golang/Go+numeric+types.svg" class="" title="Golang numeric types">]]></content>
+      
+      
+      <categories>
+          
+          <category> golang </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+            <tag> golang </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>go-antman</title>
       <link href="/2020/01/13/go-antman/"/>
       <url>/2020/01/13/go-antman/</url>
