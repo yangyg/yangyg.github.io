@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>go-git</title>
+      <link href="/2020/04/01/go-git/"/>
+      <url>/2020/04/01/go-git/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://github.com/src-d/go-git" target="_blank" rel="noopener">go-git</a></p><a id="more"></a><h2 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Clone</span><span class="params">(ctx *gin.Context)</span></span> &#123;</span><br><span class="line"><span class="comment">// Clones the repository into the given dir, just as a normal git clone does</span></span><br><span class="line">url := <span class="string">"http://git.shinyinfo.com.cn/zousu/devops.git"</span></span><br><span class="line">dir := <span class="string">"/home/yyg/workspace/gogit/devops"</span></span><br><span class="line">username := <span class="string">"yongga@mail.com"</span></span><br><span class="line">password := <span class="string">"passwd"</span></span><br><span class="line"></span><br><span class="line">buf := bytes.NewBufferString(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">r, err := git.PlainClone(dir, <span class="literal">false</span>, &amp;git.CloneOptions&#123;</span><br><span class="line">URL: url,</span><br><span class="line">Auth: &amp;githttp.BasicAuth&#123;</span><br><span class="line">Username: username,</span><br><span class="line">Password: password,</span><br><span class="line">&#125;,</span><br><span class="line">Progress: buf,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// fmt.Println(buf)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">log.Println(err)</span><br><span class="line">ctx.String(http.StatusInternalServerError, err.Error())</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Print the latest commit that was just pulled</span></span><br><span class="line">ref, err := r.Head()</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">log.Println(err)</span><br><span class="line">ctx.String(http.StatusInternalServerError, err.Error())</span><br><span class="line">ctx.AbortWithError(http.StatusInternalServerError, err)</span><br><span class="line">&#125;</span><br><span class="line">commit, err := r.CommitObject(ref.Hash())</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">log.Println(err)</span><br><span class="line">ctx.String(http.StatusInternalServerError, err.Error())</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line">fmt.Println(<span class="string">"last commit"</span>, commit)</span><br><span class="line">ctx.String(http.StatusOK, buf.String())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> go </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>react</title>
+      <link href="/2020/01/16/react/"/>
+      <url>/2020/01/16/react/</url>
+      
+        <content type="html"><![CDATA[<h1 id="react-hooks"><a href="#react-hooks" class="headerlink" title="react hooks"></a>react hooks</h1><h1 id="react-高阶组件"><a href="#react-高阶组件" class="headerlink" title="react 高阶组件"></a>react 高阶组件</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>golang</title>
       <link href="/2020/01/14/golang/"/>
       <url>/2020/01/14/golang/</url>
