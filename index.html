@@ -204,6 +204,458 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/27/%E4%BD%8D%E8%BF%90%E7%AE%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Y">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/27/%E4%BD%8D%E8%BF%90%E7%AE%97/" class="post-title-link" itemprop="url">位运算</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-27 11:27:22 / 修改时间：11:28:19" itemprop="dateCreated datePublished" datetime="2020-04-27T11:27:22+08:00">2020-04-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>218</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	<span class="built_in">println</span>(isOdd(<span class="number">1</span>))</span><br><span class="line">	<span class="built_in">println</span>(isOdd(<span class="number">2</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// and运算通常用于二进制的取位操作，例如一个数 and 1的结果就是取二进制的最末位。这可以用来判断一个整数的奇偶，二进制的最末位为0表示该数为偶数，最末位为1表示该数为奇数。</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isOdd</span><span class="params">(i <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> i&amp;<span class="number">1</span>==<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/24/go-json-marshal/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Y">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/24/go-json-marshal/" class="post-title-link" itemprop="url">go-json-marshal</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-24 11:18:00 / 修改时间：11:23:45" itemprop="dateCreated datePublished" datetime="2020-04-24T11:18:00+08:00">2020-04-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/go/" itemprop="url" rel="index">
+                    <span itemprop="name">go</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="golang-json-Marshal-html特殊字符会转义-解决方法"><a href="#golang-json-Marshal-html特殊字符会转义-解决方法" class="headerlink" title="golang json.Marshal() html特殊字符会转义 解决方法"></a>golang json.Marshal() html特殊字符会转义 解决方法</h1><h2 id="go-语言提供了-JSON-的编解码包，JSON-字符串作为参数值传输时发现，json-Marshal-生成-JSON-特殊字符-lt-、-gt-、-amp-会被转义。"><a href="#go-语言提供了-JSON-的编解码包，JSON-字符串作为参数值传输时发现，json-Marshal-生成-JSON-特殊字符-lt-、-gt-、-amp-会被转义。" class="headerlink" title="go 语言提供了 JSON 的编解码包，JSON 字符串作为参数值传输时发现，json.Marshal 生成 JSON 特殊字符 &lt;、&gt;、&amp;会被转义。"></a>go 语言提供了 JSON 的编解码包，JSON 字符串作为参数值传输时发现，json.Marshal 生成 JSON 特殊字符 &lt;、&gt;、&amp;会被转义。</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Test <span class="keyword">struct</span> &#123;</span><br><span class="line">	Content <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	t := <span class="built_in">new</span>(Test)</span><br><span class="line">	t.Content = <span class="string">"http://www.baidu.com?id=123&amp;test=1"</span></span><br><span class="line">	jsonByte, _ := json.Marshal(t)</span><br><span class="line">	fmt.Println(<span class="keyword">string</span>(jsonByte))</span><br><span class="line">&#125;</span><br><span class="line">&#123;<span class="string">"Content"</span>:<span class="string">"http://www.baidu.com?id=123\u0026test=1"</span>&#125;</span><br><span class="line">Process finished with exit code <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="GoDoc-描述"><a href="#GoDoc-描述" class="headerlink" title="GoDoc 描述"></a>GoDoc 描述</h2><p>String values encode as JSON strings coerced to valid UTF-8,<br>replacing invalid bytes with the Unicode replacement rune.<br>The angle brackets “&lt;” and “&gt;” are escaped to “\u003c” and “\u003e”<br>to keep some browsers from misinterpreting JSON output as HTML.<br>Ampersand “&amp;” is also escaped to “\u0026” for the same reason.<br>This escaping can be disabled using an Encoder that had SetEscapeHTML(false) alled on it.</p>
+<p>json.Marshal 默认 escapeHtml 为 true，会转义 &lt;、&gt;、&amp;</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Marshal</span><span class="params">(v <span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">([]<span class="keyword">byte</span>, error)</span></span> &#123;</span><br><span class="line">	e := &amp;encodeState&#123;&#125;</span><br><span class="line">	err := e.marshal(v, encOpts&#123;escapeHTML: <span class="literal">true</span>&#125;)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> e.Bytes(), <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><h3 id="直接替换"><a href="#直接替换" class="headerlink" title="直接替换"></a>直接替换</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">content = strings.Replace(content, <span class="string">"\\u003c"</span>, <span class="string">"&lt;"</span>, <span class="number">-1</span>)</span><br><span class="line">content = strings.Replace(content, <span class="string">"\\u003e"</span>, <span class="string">"&gt;"</span>, <span class="number">-1</span>)</span><br><span class="line">content = strings.Replace(content, <span class="string">"\\u0026"</span>, <span class="string">"&amp;"</span>, <span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="SetEscapeHTML-false"><a href="#SetEscapeHTML-false" class="headerlink" title="SetEscapeHTML(false)"></a>SetEscapeHTML(false)</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Test <span class="keyword">struct</span> &#123;</span><br><span class="line">	Content <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	t := <span class="built_in">new</span>(Test)</span><br><span class="line">	t.Content = <span class="string">"http://www.baidu.com?id=123&amp;test=1"</span></span><br><span class="line">	bf := bytes.NewBuffer([]<span class="keyword">byte</span>&#123;&#125;)</span><br><span class="line">	jsonEncoder := json.NewEncoder(bf)</span><br><span class="line">	jsonEncoder.SetEscapeHTML(<span class="literal">false</span>)</span><br><span class="line">	jsonEncoder.Encode(t)</span><br><span class="line">  fmt.Println(bf.String())</span><br><span class="line">&#125;</span><br><span class="line">&#123;<span class="string">"Content"</span>:<span class="string">"http://www.baidu.com?id=123&amp;test=1"</span>&#125;</span><br><span class="line">Process finished with exit code <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="a-generic-solution-for-any-struct"><a href="#a-generic-solution-for-any-struct" class="headerlink" title="a generic solution for any struct"></a>a generic solution for any struct</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">JSONMarshal</span><span class="params">(t <span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">([]<span class="keyword">byte</span>, error)</span></span> &#123;</span><br><span class="line">  buffer := &amp;bytes.Buffer&#123;&#125;</span><br><span class="line">  encoder := json.NewEncoder(buffer)</span><br><span class="line">  encoder.SetEscapeHTML(<span class="literal">false</span>)</span><br><span class="line">  err := encoder.Encode(t)</span><br><span class="line">  <span class="keyword">return</span> buffer.Bytes(), err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/14/terraform/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Y">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/14/terraform/" class="post-title-link" itemprop="url">terraform</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-14 16:42:34 / 修改时间：16:48:37" itemprop="dateCreated datePublished" datetime="2020-04-14T16:42:34+08:00">2020-04-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/terraform/" itemprop="url" rel="index">
+                    <span itemprop="name">terraform</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>213</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="terraform-init"><a href="#terraform-init" class="headerlink" title="terraform init"></a>terraform init</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">terraform init -plugin-dir=/terraform/providers</span><br></pre></td></tr></table></figure>
+<p>plugin-dir 参数 本地获取已有provider</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">terraform init -no-color</span><br></pre></td></tr></table></figure>
+<p>不显示颜色</p>
+<p>golang<br>exec.Command(commandName, params…)<br>stdout, err := cmd.Stdout<br>不加 -no-color<br>stdout 显示颜色信息代码</p>
+<h1 id="terraform-apply"><a href="#terraform-apply" class="headerlink" title="terraform apply"></a>terraform apply</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/14/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Y">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/14/git/" class="post-title-link" itemprop="url">git</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-14 16:41:55 / 修改时间：16:43:28" itemprop="dateCreated datePublished" datetime="2020-04-14T16:41:55+08:00">2020-04-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>10</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="git-webhook"><a href="#git-webhook" class="headerlink" title="git webhook"></a>git webhook</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/logrus/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Y">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/08/logrus/" class="post-title-link" itemprop="url">logrus</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-08 14:01:33 / 修改时间：14:06:36" itemprop="dateCreated datePublished" datetime="2020-04-08T14:01:33+08:00">2020-04-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/golang/" itemprop="url" rel="index">
+                    <span itemprop="name">golang</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="logrus-特性"><a href="#logrus-特性" class="headerlink" title="logrus 特性"></a>logrus 特性</h1><ul>
+<li>完全兼容golang标准库日志模块：logrus拥有六种日志级别：debug、info、warn、error、fatal和panic,这是golang标准库日志模块的API的超集.如果您的项目使用标准库日志模块,完全可以以最低的代价迁移到logrus上.<ul>
+<li>logrus.Debug(“Useful debugging information.”)</li>
+<li>logrus.Info(“Something noteworthy happened!”)</li>
+<li>logrus.Warn(“You should probably take a look at this.”)</li>
+<li>logrus.Error(“Something failed but I’m not quitting.”)</li>
+<li>logrus.Fatal(“Bye.”) //log之后会调用os.Exit(1)</li>
+<li>logrus.Panic(“I’m bailing.”) //log之后会panic()</li>
+</ul>
+</li>
+<li>可扩展的Hook机制：允许使用者通过hook的方式将日志分发到任意地方,如本地文件系统、标准输出、logstash、elasticsearch或者mq等,或者通过hook定义日志内容和格式等.</li>
+<li>可选的日志输出格式：logrus内置了两种日志格式,JSONFormatter和TextFormatter,如果这两个格式不满足需求,可以自己动手实现接口Formatter,来定义自己的日志格式.</li>
+<li>Field机制：logrus鼓励通过Field机制进行精细化的、结构化的日志记录,而不是通过冗长的消息来记录日志.</li>
+<li>logrus是一个可插拔的、结构化的日志框架.</li>
+<li>Entry: logrus.WithFields会自动返回一个 *Entry,Entry里面的有些变量会被自动加上<ul>
+<li>time:entry被创建时的时间戳</li>
+<li>msg:在调用.Info()等方法时被添加</li>
+<li>level</li>
+</ul>
+</li>
+</ul>
+<h1 id="gin-logrus-middleware"><a href="#gin-logrus-middleware" class="headerlink" title="gin logrus middleware"></a>gin logrus middleware</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> middleware</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"os"</span></span><br><span class="line">	<span class="string">"path"</span></span><br><span class="line">	<span class="string">"time"</span></span><br><span class="line"></span><br><span class="line">	<span class="string">"github.com/gin-gonic/gin"</span></span><br><span class="line">	<span class="string">"github.com/sirupsen/logrus"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// LoggerToFile 日志记录到文件</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">LoggerToFile</span><span class="params">()</span> <span class="title">gin</span>.<span class="title">HandlerFunc</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	logFilePath := <span class="string">"log"</span></span><br><span class="line">	logFileName := <span class="string">"gin.log"</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//日志文件</span></span><br><span class="line">	fileName := path.Join(logFilePath, logFileName)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> _, err := os.Stat(fileName); os.IsNotExist(err) &#123;</span><br><span class="line">		<span class="comment">// log path does not exist</span></span><br><span class="line">		os.Create(fileName)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//写入文件</span></span><br><span class="line">	src, err := os.OpenFile(fileName, os.O_APPEND|os.O_WRONLY, os.ModeAppend)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">"err"</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//实例化</span></span><br><span class="line">	logger := logrus.New()</span><br><span class="line"></span><br><span class="line">	<span class="comment">//设置输出</span></span><br><span class="line">	logger.Out = src</span><br><span class="line"></span><br><span class="line">	<span class="comment">//设置日志级别</span></span><br><span class="line">	logger.SetLevel(logrus.DebugLevel)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//设置日志格式</span></span><br><span class="line">	logger.SetFormatter(&amp;logrus.TextFormatter&#123;</span><br><span class="line">		<span class="comment">// TimestampFormat: "2006/01/02 15:04:05",</span></span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">		<span class="comment">// 开始时间</span></span><br><span class="line">		startTime := time.Now()</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 处理请求</span></span><br><span class="line">		c.Next()</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 结束时间</span></span><br><span class="line">		endTime := time.Now()</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 执行时间</span></span><br><span class="line">		latencyTime := endTime.Sub(startTime)</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 请求方式</span></span><br><span class="line">		reqMethod := c.Request.Method</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 请求路由</span></span><br><span class="line">		reqURI := c.Request.RequestURI</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 状态码</span></span><br><span class="line">		statusCode := c.Writer.Status()</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 请求IP</span></span><br><span class="line">		clientIP := c.ClientIP()</span><br><span class="line"></span><br><span class="line">		<span class="comment">// reference</span></span><br><span class="line">		referer := c.Request.Referer()</span><br><span class="line"></span><br><span class="line">		clientUserAgent := c.Request.UserAgent()</span><br><span class="line"></span><br><span class="line">		errors := c.Errors</span><br><span class="line"></span><br><span class="line">		entry := logger.WithFields(logrus.Fields&#123;</span><br><span class="line">			<span class="string">"statusCode"</span>: statusCode,</span><br><span class="line">			<span class="string">"latency"</span>:    latencyTime, <span class="comment">// time to process</span></span><br><span class="line">			<span class="string">"clientIP"</span>:   clientIP,</span><br><span class="line">			<span class="string">"method"</span>:     reqMethod,</span><br><span class="line">			<span class="string">"path"</span>:       reqURI,</span><br><span class="line">			<span class="string">"referer"</span>:    referer,</span><br><span class="line">			<span class="string">"userAgent"</span>:  clientUserAgent,</span><br><span class="line">			<span class="string">"errors"</span>:     errors,</span><br><span class="line">		&#125;)</span><br><span class="line"></span><br><span class="line">		msg := fmt.Sprintf(<span class="string">"| %3d | %13v | %15s | %s | %s | %s | %s |"</span>, statusCode, latencyTime, clientIP, reqMethod, reqURI, referer, clientUserAgent)</span><br><span class="line">		<span class="keyword">if</span> statusCode &gt; <span class="number">499</span> &#123;</span><br><span class="line">			entry.Error(msg)</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> statusCode &gt; <span class="number">399</span> &#123;</span><br><span class="line">			entry.Warn(msg)</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			entry.Info(msg)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 日志格式</span></span><br><span class="line">		<span class="comment">// logger.Infof("| %3d | %13v | %15s | %s | %s |",</span></span><br><span class="line">		<span class="comment">// 	statusCode,</span></span><br><span class="line">		<span class="comment">// 	latencyTime,</span></span><br><span class="line">		<span class="comment">// 	clientIP,</span></span><br><span class="line">		<span class="comment">// 	reqMethod,</span></span><br><span class="line">		<span class="comment">// 	reqURI,</span></span><br><span class="line">		<span class="comment">// )</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// LoggerToMongo 日志记录到 MongoDB</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">LoggerToMongo</span><span class="params">()</span> <span class="title">gin</span>.<span class="title">HandlerFunc</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// LoggerToES 日志记录到 ES</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">LoggerToES</span><span class="params">()</span> <span class="title">gin</span>.<span class="title">HandlerFunc</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// LoggerToMQ 日志记录到 MQ</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">LoggerToMQ</span><span class="params">()</span> <span class="title">gin</span>.<span class="title">HandlerFunc</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/01/go-git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -408,7 +860,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-15 13:27:21" itemprop="dateModified" datetime="2020-01-15T13:27:21+08:00">2020-01-15</time>
+                <time title="修改时间：2020-06-30 10:19:26" itemprop="dateModified" datetime="2020-06-30T10:19:26+08:00">2020-06-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -428,14 +880,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>402</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -639,475 +1091,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/08/cobra/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Y">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/08/cobra/" class="post-title-link" itemprop="url">cobra</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-08 14:42:45" itemprop="dateCreated datePublished" datetime="2020-01-08T14:42:45+08:00">2020-01-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-09 16:03:56" itemprop="dateModified" datetime="2020-01-09T16:03:56+08:00">2020-01-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index">
-                    <span itemprop="name">golang</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>448</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Cobra介绍"><a href="#Cobra介绍" class="headerlink" title="Cobra介绍"></a>Cobra介绍</h1><p>Cobra是一个库，其提供简单的接口来创建强大现代的CLI接口，类似于git或者go工具。同时，它也是一个应用，用来生成应用框架，从而开发以Cobra为基础的应用。Docker和Kubernetes源码中使用了Cobra。</p>
-<p>概念<br>Cobra有三个基本概念commands,arguments和flags。其中commands代表行为，arguments代表数值，flags代表对行为的改变。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/08/cobra/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/08/nginx-prometheus/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Y">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/08/nginx-prometheus/" class="post-title-link" itemprop="url">nginx-prometheus</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-08 11:06:06" itemprop="dateCreated datePublished" datetime="2020-01-08T11:06:06+08:00">2020-01-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-09 15:55:36" itemprop="dateModified" datetime="2020-01-09T15:55:36+08:00">2020-01-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9B%91%E6%8E%A7/" itemprop="url" rel="index">
-                    <span itemprop="name">监控</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="监控Nginx服务器"><a href="#监控Nginx服务器" class="headerlink" title="监控Nginx服务器"></a>监控Nginx服务器</h1><p>由于官方没有提供Nginx直接可用的exporter，Nginx的监控要相对复杂一些。这里使用的是三方提供nginx-vts-exporter。</p>
-<h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><p>由于nginx-vts-exporter依赖于Nginx的nginx-module-vts模块，所以这里需要重新编译下Nginx。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/08/nginx-prometheus/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/07/go-jwt/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Y">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/07/go-jwt/" class="post-title-link" itemprop="url">go-jwt</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-01-07 17:24:57 / 修改时间：17:29:40" itemprop="dateCreated datePublished" datetime="2020-01-07T17:24:57+08:00">2020-01-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index">
-                    <span itemprop="name">golang</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="jwt-生成"><a href="#jwt-生成" class="headerlink" title="jwt 生成"></a>jwt 生成</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// GenerateJWT  jwt generate</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(service UserLoginService)</span> <span class="title">GenerateJWT</span><span class="params">(user model.User)</span> <span class="params">(<span class="keyword">string</span>, error)</span></span> &#123;</span><br><span class="line">	expiresTime := time.Now().Unix() + <span class="keyword">int64</span>(config.OneDayOfHours)</span><br><span class="line">	ID := fmt.Sprint(user.ID)</span><br><span class="line">	claims := CustomClaims&#123;</span><br><span class="line">		user.Username,</span><br><span class="line">		jwt.StandardClaims&#123;</span><br><span class="line">			Audience:  <span class="string">"Audience"</span>,        <span class="comment">// 受众</span></span><br><span class="line">			ExpiresAt: expiresTime,       <span class="comment">// 失效时间</span></span><br><span class="line">			Id:        ID,                <span class="comment">// 编号</span></span><br><span class="line">			IssuedAt:  time.Now().Unix(), <span class="comment">// 签发时间</span></span><br><span class="line">			Issuer:    <span class="string">"gin project"</span>,     <span class="comment">// 签发人</span></span><br><span class="line">			NotBefore: time.Now().Unix(), <span class="comment">// 生效时间</span></span><br><span class="line">			Subject:   <span class="string">"login"</span>,           <span class="comment">// 主题</span></span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	tokenClaims := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 通过密码和保留字段加密</span></span><br><span class="line">	<span class="keyword">var</span> jwtSecret = []<span class="keyword">byte</span>(config.Secret + user.PasswordDigest)</span><br><span class="line">	token, err := tokenClaims.SignedString(jwtSecret)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> token, err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/07/go-jwt/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/07/gin-cors/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Y">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/07/gin-cors/" class="post-title-link" itemprop="url">golang gin-cors</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-01-07 17:02:53 / 修改时间：17:25:29" itemprop="dateCreated datePublished" datetime="2020-01-07T17:02:53+08:00">2020-01-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index">
-                    <span itemprop="name">golang</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>694</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="golang-gin框架-跨域访问配置代码"><a href="#golang-gin框架-跨域访问配置代码" class="headerlink" title="golang gin框架 跨域访问配置代码"></a>golang gin框架 跨域访问配置代码</h1><h2 id="中间件代码"><a href="#中间件代码" class="headerlink" title="中间件代码"></a>中间件代码</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> middleware</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"github.com/gin-contrib/cors"</span></span><br><span class="line">	<span class="string">"github.com/gin-gonic/gin"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Cors 跨域配置</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Cors</span><span class="params">()</span> <span class="title">gin</span>.<span class="title">HandlerFunc</span></span> &#123;</span><br><span class="line">	config := cors.DefaultConfig()</span><br><span class="line">	config.AllowMethods = []<span class="keyword">string</span>&#123;<span class="string">"GET"</span>, <span class="string">"POST"</span>, <span class="string">"PUT"</span>, <span class="string">"PATCH"</span>, <span class="string">"DELETE"</span>, <span class="string">"HEAD"</span>, <span class="string">"OPTIONS"</span>&#125;</span><br><span class="line">	config.AllowHeaders = []<span class="keyword">string</span>&#123;<span class="string">"Origin"</span>, <span class="string">"Content-Length"</span>, <span class="string">"Content-Type"</span>, <span class="string">"Cookie"</span>&#125;</span><br><span class="line">	<span class="keyword">if</span> gin.Mode() == gin.ReleaseMode &#123;</span><br><span class="line">		<span class="comment">// 生产环境需要配置跨域域名，否则403</span></span><br><span class="line">		config.AllowOrigins = []<span class="keyword">string</span>&#123;<span class="string">"http://www.example.com"</span>&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		config.AllowOrigins = []<span class="keyword">string</span>&#123;<span class="string">"*"</span>&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	config.AllowCredentials = <span class="literal">true</span></span><br><span class="line">	<span class="keyword">return</span> cors.New(config)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/07/gin-cors/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/17/rails-cors/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Y">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/09/17/rails-cors/" class="post-title-link" itemprop="url">rails cors</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-09-17 17:01:55" itemprop="dateCreated datePublished" datetime="2018-09-17T17:01:55+08:00">2018-09-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-03 16:16:28" itemprop="dateModified" datetime="2020-01-03T16:16:28+08:00">2020-01-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/rails/" itemprop="url" rel="index">
-                    <span itemprop="name">rails</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>204</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="rails-cors-跨域访问设置"><a href="#rails-cors-跨域访问设置" class="headerlink" title="rails cors 跨域访问设置"></a>rails cors 跨域访问设置</h1><h2 id="gemfile"><a href="#gemfile" class="headerlink" title="gemfile"></a>gemfile</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem ‘rack-cors’, <span class="symbol">require:</span> ‘rack/cors’</span><br></pre></td></tr></table></figure>
-
-<h2 id="config-application-rb"><a href="#config-application-rb" class="headerlink" title="config/application.rb"></a>config/application.rb</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">config.middleware.insert_before <span class="number">0</span>, Rack::Cors <span class="keyword">do</span></span><br><span class="line">  allow <span class="keyword">do</span></span><br><span class="line">    origins ‘‘</span><br><span class="line">    resource ‘‘, <span class="symbol">headers:</span> <span class="symbol">:any</span>, <span class="symbol">methods:</span> [<span class="symbol">:get</span>, <span class="symbol">:post</span>, <span class="symbol">:options</span>]</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1178,18 +1161,18 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1223,12 +1206,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">9k</span>
+    <span title="站点总字数">17k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9 分钟</span>
+    <span title="站点阅读时长">15 分钟</span>
 </div>
 
         
