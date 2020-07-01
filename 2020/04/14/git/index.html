@@ -46,15 +46,15 @@
   };
 </script>
 
-  <meta name="description" content="git webhook">
+  <meta name="description" content="gitgit webhookgit add 参数不同区别 git add -A  提交所有变化  git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)  git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件   git core.autocrlfcore.autocrlf假如你正在 W">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git">
 <meta property="og:url" content="http://yoursite.com/2020/04/14/git/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="git webhook">
+<meta property="og:description" content="gitgit webhookgit add 参数不同区别 git add -A  提交所有变化  git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)  git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件   git core.autocrlfcore.autocrlf假如你正在 W">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-14T08:41:55.000Z">
-<meta property="article:modified_time" content="2020-04-14T08:43:28.207Z">
+<meta property="article:modified_time" content="2020-07-01T02:01:59.734Z">
 <meta property="article:author" content="Y">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -231,10 +231,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-14 16:41:55 / 修改时间：16:43:28" itemprop="dateCreated datePublished" datetime="2020-04-14T16:41:55+08:00">2020-04-14</time>
+              <time title="创建时间：2020-04-14 16:41:55" itemprop="dateCreated datePublished" datetime="2020-04-14T16:41:55+08:00">2020-04-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-01 10:01:59" itemprop="dateModified" datetime="2020-07-01T10:01:59+08:00">2020-07-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -260,7 +266,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>10</span>
+              <span>836</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -279,7 +285,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="git-webhook"><a href="#git-webhook" class="headerlink" title="git webhook"></a>git webhook</h1>
+        <h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="git-webhook"><a href="#git-webhook" class="headerlink" title="git webhook"></a>git webhook</h2><h2 id="git-add-参数不同区别"><a href="#git-add-参数不同区别" class="headerlink" title="git add 参数不同区别"></a>git add 参数不同区别</h2><ul>
+<li><p>git add -A  提交所有变化</p>
+</li>
+<li><p>git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)</p>
+</li>
+<li><p>git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件</p>
+</li>
+</ul>
+<h2 id="git-core-autocrlf"><a href="#git-core-autocrlf" class="headerlink" title="git core.autocrlf"></a>git core.autocrlf</h2><p>core.autocrlf<br>假如你正在 Windows 上写程序，而你的同伴用的是其他系统（或相反），你可能会遇到 CRLF 问题。 这是因为 Windows 使用回车（CR）和换行（LF）两个字符来结束一行，而 macOS 和 Linux 只使用换行（LF）一个字符。 虽然这是小问题，但它会极大地扰乱跨平台协作。许多 Windows 上的编辑器会悄悄把行尾的换行字符转换成回车和换行， 或在用户按下 Enter 键时，插入回车和换行两个字符。</p>
+<p>Git 可以在你提交时自动地把回车和换行转换成换行，而在检出代码时把换行转换成回车和换行。 你可以用 core.autocrlf 来打开此项功能。 如果是在 Windows 系统上，把它设置成 true，这样在检出代码时，换行会被转换成回车和换行：</p>
+<blockquote>
+<p>$ git config –global core.autocrlf true</p>
+</blockquote>
+<p>如果使用以换行作为行结束符的 Linux 或 macOS，你不需要 Git 在检出文件时进行自动的转换； 然而当一个以回车加换行作为行结束符的文件不小心被引入时，你肯定想让 Git 修正。 你可以把 core.autocrlf 设置成 input 来告诉 Git 在提交时把回车和换行转换成换行，检出时不转换：</p>
+<blockquote>
+<p>$ git config –global core.autocrlf input</p>
+</blockquote>
+<p>这样在 Windows 上的检出文件中会保留回车和换行，而在 macOS 和 Linux 上，以及版本库中会保留换行。</p>
+<p>如果你是 Windows 程序员，且正在开发仅运行在 Windows 上的项目，可以设置 false 取消此功能，把回车保留在版本库中：</p>
+<blockquote>
+<p>$ git config –global core.autocrlf false</p>
+</blockquote>
+
     </div>
 
     
@@ -363,7 +391,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git-webhook"><span class="nav-number">1.</span> <span class="nav-text">git webhook</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git"><span class="nav-number">1.</span> <span class="nav-text">git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-webhook"><span class="nav-number">1.1.</span> <span class="nav-text">git webhook</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-add-参数不同区别"><span class="nav-number">1.2.</span> <span class="nav-text">git add 参数不同区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-core-autocrlf"><span class="nav-number">1.3.</span> <span class="nav-text">git core.autocrlf</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -377,18 +405,18 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -422,12 +450,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">19k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">17 分钟</span>
 </div>
 
         
