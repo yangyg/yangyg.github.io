@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>图数据库</title>
+      <link href="/2020/07/27/graphdb/"/>
+      <url>/2020/07/27/graphdb/</url>
+      
+        <content type="html"><![CDATA[<h1 id="图数据库"><a href="#图数据库" class="headerlink" title="图数据库"></a>图数据库</h1><h2 id="什么是图数据库"><a href="#什么是图数据库" class="headerlink" title="什么是图数据库"></a>什么是图数据库</h2><p>图数据库源起欧拉和图理论，也可称为面向/基于图的数据库，对应的英文是Graph Database。图数据库的基本含义是以“图”这种数据结构存储和查询数据，而不是存储图片的数据库。它的数据模型主要是以节点和关系（边）来体现，也可处理键值对。它的优点是快速解决复杂的关系问题</p><p>图数据库名字的由来其实与其在底层的存储方式有关，Neo4j底层会以图的方式把用户定义的节点以及关系存储起来，通过这种方式，可是高效的实现从某个节点开始，通过节点与节点间关系，找出两个节点间的联系。</p><a id="more"></a><p>从这段描述中可以猜得到，在Neo4j中最重要的两个元素就是节点和关系。说到节点和关系，就必须引出一个非常重要的概念，属性图模型(Property Graph Model)。如下所示:</p><img src="/2020/07/27/graphdb/graphdb.webp" class="" title="graphdb"><p>一个图中会记录节点和关系<br>关系可以用来关联两个节点<br>节点和关系都可以拥有自己的属性<br>可以赋予节点多个标签(类别)</p><p>图数据库有哪些特征？<br>1.包含节点和边；<br>2.节点上有属性（键值对）；<br>3.边有名字和方向，并总是有一个开始节点和一个结束节点；<br>4.边也可以有属性。</p><h2 id="开源图数据库"><a href="#开源图数据库" class="headerlink" title="开源图数据库"></a>开源图数据库</h2><p>5个优秀的开源图数据库<br>1.Neo4j社区版<br>2.HyperGraphDB<br>3.Titan分布式图数据库<br>4.ArangoDB<br>5.Apache TinkerPop</p><p>golang graphdb<br><a href="https://github.com/dgraph-io/dgraph" target="_blank" rel="noopener">Dgraph</a></p><h2 id="查询语言"><a href="#查询语言" class="headerlink" title="查询语言"></a>查询语言</h2><p>图数据库是使用图结构进行语义查询的数据库，它使用节点、边和属性来表示和存储数据。</p><p>虽然和关系型数据库存储的结构不同（关系型数据库为表结构，图数据库为图结构），但不计各自的性能问题，关系型数据库可以通过递归查询或者组合其他 SQL 语句（Join）完成图查询语言查询节点关系操作。得益于 1987 年 SQL 成为国际标准化组织（ISO）标准，关系型数据库行业得到了很好的发展。同 60、70 年代的关系型数据库类似，图数据库这个领域的查询语言目前也没有统一标准，虽然 19 年 9 月经过国际 SQL 标准委员会投票表决，决定将图查询语言（Graph Query Language）纳为一种新的数据库查询语言，但 GQL 的制定仍需要一段时间。</p><table><thead><tr><th>术语</th><th>Gremlin</th><th>Cypher</th><th>nGQL</th></tr></thead><tbody><tr><td>点</td><td>Vertex</td><td>Node</td><td>Vertex</td></tr><tr><td>边</td><td>Edge</td><td>Relationship</td><td>Edge</td></tr><tr><td>点类型</td><td>label</td><td>RelationshipType</td><td>edge type</td></tr><tr><td>点 ID</td><td>vid</td><td>id(n)</td><td>vid</td></tr><tr><td>边 ID</td><td>eid</td><td>id®</td><td>无</td></tr></tbody></table><p>图查询语言 Gremlin<br>Gremlin  是 Apache ThinkerPop 框架下的图遍历语言。Gremlin 可以是声明性的也可以是命令性的。虽然 Gremlin 是基于 Groovy 的，但具有许多语言变体，允许开发人员以 Java、JavaScript、Python、Scala、Clojure 和 Groovy 等许多现代编程语言原生编写 Gremlin 查询。<br>支持图数据库：Janus Graph、InfiniteGraph、Cosmos DB、DataStax Enterprise(5.0+) 、Amazon Neptune</p><p>图查询语言 Cypher<br>Cypher 是一个描述性的图形查询语言，允许不必编写图形结构的遍历代码对图形存储有表现力和效率的查询，和 SQL 很相似，Cypher 语言的关键字不区分大小写，但是属性值，标签，关系类型和变量是区分大小写的。<br>支持图数据库： Neo4j、RedisGraph、AgensGraph</p><p>图查询语言 nGQL<br>nGQL 是一种类 SQL 的声明型的文本查询语言，nGQL 同样是关键词大小写不敏感的查询语言，目前支持模式匹配、聚合运算、图计算，可无嵌入组合语句<br>支持图数据库：Nebula Graph</p><h2 id="图数据库最常使用的场景"><a href="#图数据库最常使用的场景" class="headerlink" title="图数据库最常使用的场景"></a>图数据库最常使用的场景</h2><ol><li>社交网络应用</li><li>实时推荐</li><li>地理空间管理</li><li>网络和数据中心管理</li><li>授权和访问控制</li></ol><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><p><a href="https://www.jianshu.com/p/d86b0fddea0e" target="_blank" rel="noopener">开源NoSQL数据库ArangoDB浅析</a><br><a href="https://www.jianshu.com/p/83d6188a26d4" target="_blank" rel="noopener">图数据库——大数据时代的高铁</a><br><a href="https://database.51cto.com/art/201911/606675.htm" target="_blank" rel="noopener">5个优秀的开源图数据库</a><br><a href="https://juejin.im/post/5cf9ac186fb9a07ee85c1b47" target="_blank" rel="noopener">图数据库介绍</a><br><a href="https://www.infoq.cn/article/4yJWv631OHsR0TJGhu6E" target="_blank" rel="noopener">图数据库查询语言</a></p><h1 id="arangodb"><a href="#arangodb" class="headerlink" title="arangodb"></a>arangodb</h1><h2 id="start"><a href="#start" class="headerlink" title="start"></a>start</h2><blockquote><p>$ docker run -p 8529:8529 -e ARANGO_ROOT_PASSWORD=openSesame arangodb/arangodb:3.6.4<br>$ docker run –rm -it -p 8529:8529 -e ARANGO_ROOT_PASSWORD=openSesame -v ~/arangodb3:/var/lib/arangodb3 arangodb/arangodb:3.6.4</p></blockquote><p><a href="http://element-ui.cn/news/show-409248.aspx" target="_blank" rel="noopener">arangodb存储引擎rocksdb</a></p><p>arangodb:   database -&gt; collection -&gt; document<br>rdbms:      database -&gt; table      -&gt; row</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FOR doc IN collection</span><br><span class="line">  return doc</span><br></pre></td></tr></table></figure><h1 id="neo4j"><a href="#neo4j" class="headerlink" title="neo4j"></a><a href="https://neo4j.com/developer/docker-run-neo4j/" target="_blank" rel="noopener">neo4j</a></h1><h2 id="run"><a href="#run" class="headerlink" title="run"></a>run</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    --name testneo4j \</span><br><span class="line">    -p 7474:7474 -p 7687:7687 \</span><br><span class="line">    -d \</span><br><span class="line">    -v $HOME&#x2F;neo4j&#x2F;data:&#x2F;data \</span><br><span class="line">    -v $HOME&#x2F;neo4j&#x2F;logs:&#x2F;logs \</span><br><span class="line">    -v $HOME&#x2F;neo4j&#x2F;import:&#x2F;var&#x2F;lib&#x2F;neo4j&#x2F;import \</span><br><span class="line">    -v $HOME&#x2F;neo4j&#x2F;plugins:&#x2F;plugins \</span><br><span class="line">    --env NEO4J_AUTH&#x3D;neo4j&#x2F;test \</span><br><span class="line">    neo4j:latest</span><br></pre></td></tr></table></figure><h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p>创建<br>CREATE (p:Person {name: ‘admin’}) RETURN p</p><p>查找<br>MATCH (p:Person) RETURN p<br>MATCH (p)-[:DIRECTED]-&gt;(m) RETURN p,m</p><p>删除(删除时node存在关系必须删除关系，否则报错)<br>MATCH (p:Person)<br>WHERE id(p) = 1<br>DELETE p<br>RETURN p</p><p>已存在node创建relation<br>MATCH (p1:Person)<br>WHERE id(p1) = 1<br>MATCH (p2:Person)<br>WHERE id(p2) = 2<br>CREATE (p1)-[:like]-&gt;(p2)<br>RETURN p1,p2</p><p>更新<br>MATCH (p1:Person)<br>WHERE id(p1) = 1<br>SET p1.name = ‘alex’<br>RETURN p1</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> database </tag>
+            
+            <tag> graph database </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>django</title>
+      <link href="/2020/06/30/django/"/>
+      <url>/2020/06/30/django/</url>
+      
+        <content type="html"><![CDATA[<h2 id="database"><a href="#database" class="headerlink" title="database"></a>database</h2><p>settings.py</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>, <span class="comment"># 数据库引擎</span></span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'django_mysql'</span>, <span class="comment"># 数据库名</span></span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'root'</span>, <span class="comment"># 账号</span></span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'root'</span>, <span class="comment"># 密码</span></span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">'127.0.0.1'</span>, <span class="comment"># HOST</span></span><br><span class="line">        <span class="string">'POST'</span>: <span class="number">3306</span>, <span class="comment"># 端口</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>如果报错<br>ImproperlyConfigured: mysqlclient 1.3.13 or newer is required</p><blockquote><p>pip install mysqlclient</p></blockquote><h2 id="django-ImageField-存储图片"><a href="#django-ImageField-存储图片" class="headerlink" title="django ImageField 存储图片"></a>django ImageField 存储图片</h2><p><a href="https://zhuanlan.zhihu.com/p/111994445" target="_blank" rel="noopener">ref</a></p><p>matplotlib 图片存储 ImageField</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.core.files.images <span class="keyword">import</span> ImageFile</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># plt 图表</span></span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>, <span class="number">6</span>))</span><br><span class="line">plt.title(<span class="string">'Actual vs predicted'</span>)</span><br><span class="line">plt.scatter(x, y)</span><br><span class="line">plt.plot(x, y_pred, color=<span class="string">'black'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换图片</span></span><br><span class="line">sio = BytesIO()</span><br><span class="line">plt.savefig(sio, format=<span class="string">'png'</span>)</span><br><span class="line">plt.close() <span class="comment"># 记得关闭，不然画出来的图是重复的</span></span><br><span class="line">img = ImageFile(sio, name=<span class="string">"&#123;&#125;_train.png"</span>.format(name))</span><br><span class="line"></span><br><span class="line"><span class="comment"># django model 存储</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">model</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">  img_field = models.ImageField(upload_to=<span class="string">'img'</span>)</span><br><span class="line"></span><br><span class="line">m = model(img_field=img)</span><br><span class="line">m.save()</span><br><span class="line"></span><br><span class="line"><span class="comment"># settings.py</span></span><br><span class="line">MEDIA_ROOT = <span class="string">'media/'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># urls.py</span></span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path, include, re_path</span><br><span class="line"><span class="keyword">from</span> django.conf <span class="keyword">import</span> settings</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.views.static <span class="keyword">import</span> serve</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">  path(<span class="string">'admin/'</span>, admin.site.urls),</span><br><span class="line">  re_path(<span class="string">r'media/(?P&lt;path&gt;.*)$'</span>,serve,&#123;<span class="string">'document_root'</span>:settings.MEDIA_ROOT&#125;),</span><br><span class="line">]</span><br></pre></td></tr></table></figure><h2 id="根据项目依赖生成-requirements-txt"><a href="#根据项目依赖生成-requirements-txt" class="headerlink" title="根据项目依赖生成 requirements.txt"></a>根据项目依赖生成 requirements.txt</h2><h3 id="安装-pipreqs"><a href="#安装-pipreqs" class="headerlink" title="安装 pipreqs"></a>安装 pipreqs</h3><blockquote><p>pip install pipreqs</p></blockquote><h3 id="在当前目录生成"><a href="#在当前目录生成" class="headerlink" title="在当前目录生成"></a>在当前目录生成</h3><blockquote><p>pipreqs . –encoding=utf8 –force</p></blockquote><p>注意 –encoding=utf8 为使用utf8编码，不然可能会报UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0xae in position 406: illegal multibyte sequence 的错误。</p><p>–force 强制执行，当 生成目录下的requirements.txt存在时覆盖。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> django </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>位运算</title>
+      <link href="/2020/04/27/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+      <url>/2020/04/27/%E4%BD%8D%E8%BF%90%E7%AE%97/</url>
+      
+        <content type="html"><![CDATA[<h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line"><span class="built_in">println</span>(isOdd(<span class="number">1</span>))</span><br><span class="line"><span class="built_in">println</span>(isOdd(<span class="number">2</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// and运算通常用于二进制的取位操作，例如一个数 and 1的结果就是取二进制的最末位。这可以用来判断一个整数的奇偶，二进制的最末位为0表示该数为偶数，最末位为1表示该数为奇数。</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isOdd</span><span class="params">(i <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line"><span class="keyword">return</span> i&amp;<span class="number">1</span>==<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+            <tag> 位运算 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>go-json-marshal</title>
+      <link href="/2020/04/24/go-json-marshal/"/>
+      <url>/2020/04/24/go-json-marshal/</url>
+      
+        <content type="html"><![CDATA[<h1 id="golang-json-Marshal-html特殊字符会转义-解决方法"><a href="#golang-json-Marshal-html特殊字符会转义-解决方法" class="headerlink" title="golang json.Marshal() html特殊字符会转义 解决方法"></a>golang json.Marshal() html特殊字符会转义 解决方法</h1><h2 id="go-语言提供了-JSON-的编解码包，JSON-字符串作为参数值传输时发现，json-Marshal-生成-JSON-特殊字符-lt-、-gt-、-amp-会被转义。"><a href="#go-语言提供了-JSON-的编解码包，JSON-字符串作为参数值传输时发现，json-Marshal-生成-JSON-特殊字符-lt-、-gt-、-amp-会被转义。" class="headerlink" title="go 语言提供了 JSON 的编解码包，JSON 字符串作为参数值传输时发现，json.Marshal 生成 JSON 特殊字符 &lt;、&gt;、&amp;会被转义。"></a>go 语言提供了 JSON 的编解码包，JSON 字符串作为参数值传输时发现，json.Marshal 生成 JSON 特殊字符 &lt;、&gt;、&amp;会被转义。</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Test <span class="keyword">struct</span> &#123;</span><br><span class="line">Content <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">t := <span class="built_in">new</span>(Test)</span><br><span class="line">t.Content = <span class="string">"http://www.baidu.com?id=123&amp;test=1"</span></span><br><span class="line">jsonByte, _ := json.Marshal(t)</span><br><span class="line">fmt.Println(<span class="keyword">string</span>(jsonByte))</span><br><span class="line">&#125;</span><br><span class="line">&#123;<span class="string">"Content"</span>:<span class="string">"http://www.baidu.com?id=123\u0026test=1"</span>&#125;</span><br><span class="line">Process finished with exit code <span class="number">0</span></span><br></pre></td></tr></table></figure><h2 id="GoDoc-描述"><a href="#GoDoc-描述" class="headerlink" title="GoDoc 描述"></a>GoDoc 描述</h2><p>String values encode as JSON strings coerced to valid UTF-8,<br>replacing invalid bytes with the Unicode replacement rune.<br>The angle brackets “&lt;” and “&gt;” are escaped to “\u003c” and “\u003e”<br>to keep some browsers from misinterpreting JSON output as HTML.<br>Ampersand “&amp;” is also escaped to “\u0026” for the same reason.<br>This escaping can be disabled using an Encoder that had SetEscapeHTML(false) alled on it.</p><p>json.Marshal 默认 escapeHtml 为 true，会转义 &lt;、&gt;、&amp;</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Marshal</span><span class="params">(v <span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">([]<span class="keyword">byte</span>, error)</span></span> &#123;</span><br><span class="line">e := &amp;encodeState&#123;&#125;</span><br><span class="line">err := e.marshal(v, encOpts&#123;escapeHTML: <span class="literal">true</span>&#125;)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> e.Bytes(), <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><h3 id="直接替换"><a href="#直接替换" class="headerlink" title="直接替换"></a>直接替换</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">content = strings.Replace(content, <span class="string">"\\u003c"</span>, <span class="string">"&lt;"</span>, <span class="number">-1</span>)</span><br><span class="line">content = strings.Replace(content, <span class="string">"\\u003e"</span>, <span class="string">"&gt;"</span>, <span class="number">-1</span>)</span><br><span class="line">content = strings.Replace(content, <span class="string">"\\u0026"</span>, <span class="string">"&amp;"</span>, <span class="number">-1</span>)</span><br></pre></td></tr></table></figure><h3 id="SetEscapeHTML-false"><a href="#SetEscapeHTML-false" class="headerlink" title="SetEscapeHTML(false)"></a>SetEscapeHTML(false)</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Test <span class="keyword">struct</span> &#123;</span><br><span class="line">Content <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">t := <span class="built_in">new</span>(Test)</span><br><span class="line">t.Content = <span class="string">"http://www.baidu.com?id=123&amp;test=1"</span></span><br><span class="line">bf := bytes.NewBuffer([]<span class="keyword">byte</span>&#123;&#125;)</span><br><span class="line">jsonEncoder := json.NewEncoder(bf)</span><br><span class="line">jsonEncoder.SetEscapeHTML(<span class="literal">false</span>)</span><br><span class="line">jsonEncoder.Encode(t)</span><br><span class="line">  fmt.Println(bf.String())</span><br><span class="line">&#125;</span><br><span class="line">&#123;<span class="string">"Content"</span>:<span class="string">"http://www.baidu.com?id=123&amp;test=1"</span>&#125;</span><br><span class="line">Process finished with exit code <span class="number">0</span></span><br></pre></td></tr></table></figure><h3 id="a-generic-solution-for-any-struct"><a href="#a-generic-solution-for-any-struct" class="headerlink" title="a generic solution for any struct"></a>a generic solution for any struct</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">JSONMarshal</span><span class="params">(t <span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">([]<span class="keyword">byte</span>, error)</span></span> &#123;</span><br><span class="line">  buffer := &amp;bytes.Buffer&#123;&#125;</span><br><span class="line">  encoder := json.NewEncoder(buffer)</span><br><span class="line">  encoder.SetEscapeHTML(<span class="literal">false</span>)</span><br><span class="line">  err := encoder.Encode(t)</span><br><span class="line">  <span class="keyword">return</span> buffer.Bytes(), err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> go </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+            <tag> marshal </tag>
+            
+            <tag> json </tag>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>terraform</title>
+      <link href="/2020/04/14/terraform/"/>
+      <url>/2020/04/14/terraform/</url>
+      
+        <content type="html"><![CDATA[<h1 id="terraform-init"><a href="#terraform-init" class="headerlink" title="terraform init"></a>terraform init</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">terraform init -plugin-dir=/terraform/providers</span><br></pre></td></tr></table></figure><p>plugin-dir 参数 本地获取已有provider</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">terraform init -no-color</span><br></pre></td></tr></table></figure><p>不显示颜色</p><p>golang<br>exec.Command(commandName, params…)<br>stdout, err := cmd.Stdout<br>不加 -no-color<br>stdout 显示颜色信息代码</p><h1 id="terraform-apply"><a href="#terraform-apply" class="headerlink" title="terraform apply"></a>terraform apply</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> terraform </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> terraform </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>git</title>
+      <link href="/2020/04/14/git/"/>
+      <url>/2020/04/14/git/</url>
+      
+        <content type="html"><![CDATA[<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="git-webhook"><a href="#git-webhook" class="headerlink" title="git webhook"></a>git webhook</h2><h2 id="git-add-参数不同区别"><a href="#git-add-参数不同区别" class="headerlink" title="git add 参数不同区别"></a>git add 参数不同区别</h2><ul><li><p>git add -A  提交所有变化</p></li><li><p>git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)</p></li><li><p>git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件</p></li></ul><h2 id="git-core-autocrlf"><a href="#git-core-autocrlf" class="headerlink" title="git core.autocrlf"></a>git core.autocrlf</h2><p>core.autocrlf<br>假如你正在 Windows 上写程序，而你的同伴用的是其他系统（或相反），你可能会遇到 CRLF 问题。 这是因为 Windows 使用回车（CR）和换行（LF）两个字符来结束一行，而 macOS 和 Linux 只使用换行（LF）一个字符。 虽然这是小问题，但它会极大地扰乱跨平台协作。许多 Windows 上的编辑器会悄悄把行尾的换行字符转换成回车和换行， 或在用户按下 Enter 键时，插入回车和换行两个字符。</p><p>Git 可以在你提交时自动地把回车和换行转换成换行，而在检出代码时把换行转换成回车和换行。 你可以用 core.autocrlf 来打开此项功能。 如果是在 Windows 系统上，把它设置成 true，这样在检出代码时，换行会被转换成回车和换行：</p><blockquote><p>$ git config –global core.autocrlf true</p></blockquote><p>如果使用以换行作为行结束符的 Linux 或 macOS，你不需要 Git 在检出文件时进行自动的转换； 然而当一个以回车加换行作为行结束符的文件不小心被引入时，你肯定想让 Git 修正。 你可以把 core.autocrlf 设置成 input 来告诉 Git 在提交时把回车和换行转换成换行，检出时不转换：</p><blockquote><p>$ git config –global core.autocrlf input</p></blockquote><p>这样在 Windows 上的检出文件中会保留回车和换行，而在 macOS 和 Linux 上，以及版本库中会保留换行。</p><p>如果你是 Windows 程序员，且正在开发仅运行在 Windows 上的项目，可以设置 false 取消此功能，把回车保留在版本库中：</p><blockquote><p>$ git config –global core.autocrlf false</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>logrus</title>
+      <link href="/2020/04/08/logrus/"/>
+      <url>/2020/04/08/logrus/</url>
+      
+        <content type="html"><![CDATA[<h1 id="logrus-特性"><a href="#logrus-特性" class="headerlink" title="logrus 特性"></a>logrus 特性</h1><ul><li>完全兼容golang标准库日志模块：logrus拥有六种日志级别：debug、info、warn、error、fatal和panic,这是golang标准库日志模块的API的超集.如果您的项目使用标准库日志模块,完全可以以最低的代价迁移到logrus上.<ul><li>logrus.Debug(“Useful debugging information.”)</li><li>logrus.Info(“Something noteworthy happened!”)</li><li>logrus.Warn(“You should probably take a look at this.”)</li><li>logrus.Error(“Something failed but I’m not quitting.”)</li><li>logrus.Fatal(“Bye.”) //log之后会调用os.Exit(1)</li><li>logrus.Panic(“I’m bailing.”) //log之后会panic()</li></ul></li><li>可扩展的Hook机制：允许使用者通过hook的方式将日志分发到任意地方,如本地文件系统、标准输出、logstash、elasticsearch或者mq等,或者通过hook定义日志内容和格式等.</li><li>可选的日志输出格式：logrus内置了两种日志格式,JSONFormatter和TextFormatter,如果这两个格式不满足需求,可以自己动手实现接口Formatter,来定义自己的日志格式.</li><li>Field机制：logrus鼓励通过Field机制进行精细化的、结构化的日志记录,而不是通过冗长的消息来记录日志.</li><li>logrus是一个可插拔的、结构化的日志框架.</li><li>Entry: logrus.WithFields会自动返回一个 *Entry,Entry里面的有些变量会被自动加上<ul><li>time:entry被创建时的时间戳</li><li>msg:在调用.Info()等方法时被添加</li><li>level</li></ul></li></ul><h1 id="gin-logrus-middleware"><a href="#gin-logrus-middleware" class="headerlink" title="gin logrus middleware"></a>gin logrus middleware</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> middleware</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line"><span class="string">"fmt"</span></span><br><span class="line"><span class="string">"os"</span></span><br><span class="line"><span class="string">"path"</span></span><br><span class="line"><span class="string">"time"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"github.com/gin-gonic/gin"</span></span><br><span class="line"><span class="string">"github.com/sirupsen/logrus"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// LoggerToFile 日志记录到文件</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">LoggerToFile</span><span class="params">()</span> <span class="title">gin</span>.<span class="title">HandlerFunc</span></span> &#123;</span><br><span class="line"></span><br><span class="line">logFilePath := <span class="string">"log"</span></span><br><span class="line">logFileName := <span class="string">"gin.log"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//日志文件</span></span><br><span class="line">fileName := path.Join(logFilePath, logFileName)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> _, err := os.Stat(fileName); os.IsNotExist(err) &#123;</span><br><span class="line"><span class="comment">// log path does not exist</span></span><br><span class="line">os.Create(fileName)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//写入文件</span></span><br><span class="line">src, err := os.OpenFile(fileName, os.O_APPEND|os.O_WRONLY, os.ModeAppend)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">fmt.Println(<span class="string">"err"</span>, err)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化</span></span><br><span class="line">logger := logrus.New()</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置输出</span></span><br><span class="line">logger.Out = src</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置日志级别</span></span><br><span class="line">logger.SetLevel(logrus.DebugLevel)</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置日志格式</span></span><br><span class="line">logger.SetFormatter(&amp;logrus.TextFormatter&#123;</span><br><span class="line"><span class="comment">// TimestampFormat: "2006/01/02 15:04:05",</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line"><span class="comment">// 开始时间</span></span><br><span class="line">startTime := time.Now()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 处理请求</span></span><br><span class="line">c.Next()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 结束时间</span></span><br><span class="line">endTime := time.Now()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行时间</span></span><br><span class="line">latencyTime := endTime.Sub(startTime)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 请求方式</span></span><br><span class="line">reqMethod := c.Request.Method</span><br><span class="line"></span><br><span class="line"><span class="comment">// 请求路由</span></span><br><span class="line">reqURI := c.Request.RequestURI</span><br><span class="line"></span><br><span class="line"><span class="comment">// 状态码</span></span><br><span class="line">statusCode := c.Writer.Status()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 请求IP</span></span><br><span class="line">clientIP := c.ClientIP()</span><br><span class="line"></span><br><span class="line"><span class="comment">// reference</span></span><br><span class="line">referer := c.Request.Referer()</span><br><span class="line"></span><br><span class="line">clientUserAgent := c.Request.UserAgent()</span><br><span class="line"></span><br><span class="line">errors := c.Errors</span><br><span class="line"></span><br><span class="line">entry := logger.WithFields(logrus.Fields&#123;</span><br><span class="line"><span class="string">"statusCode"</span>: statusCode,</span><br><span class="line"><span class="string">"latency"</span>:    latencyTime, <span class="comment">// time to process</span></span><br><span class="line"><span class="string">"clientIP"</span>:   clientIP,</span><br><span class="line"><span class="string">"method"</span>:     reqMethod,</span><br><span class="line"><span class="string">"path"</span>:       reqURI,</span><br><span class="line"><span class="string">"referer"</span>:    referer,</span><br><span class="line"><span class="string">"userAgent"</span>:  clientUserAgent,</span><br><span class="line"><span class="string">"errors"</span>:     errors,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">msg := fmt.Sprintf(<span class="string">"| %3d | %13v | %15s | %s | %s | %s | %s |"</span>, statusCode, latencyTime, clientIP, reqMethod, reqURI, referer, clientUserAgent)</span><br><span class="line"><span class="keyword">if</span> statusCode &gt; <span class="number">499</span> &#123;</span><br><span class="line">entry.Error(msg)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> statusCode &gt; <span class="number">399</span> &#123;</span><br><span class="line">entry.Warn(msg)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">entry.Info(msg)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 日志格式</span></span><br><span class="line"><span class="comment">// logger.Infof("| %3d | %13v | %15s | %s | %s |",</span></span><br><span class="line"><span class="comment">// statusCode,</span></span><br><span class="line"><span class="comment">// latencyTime,</span></span><br><span class="line"><span class="comment">// clientIP,</span></span><br><span class="line"><span class="comment">// reqMethod,</span></span><br><span class="line"><span class="comment">// reqURI,</span></span><br><span class="line"><span class="comment">// )</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// LoggerToMongo 日志记录到 MongoDB</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">LoggerToMongo</span><span class="params">()</span> <span class="title">gin</span>.<span class="title">HandlerFunc</span></span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// LoggerToES 日志记录到 ES</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">LoggerToES</span><span class="params">()</span> <span class="title">gin</span>.<span class="title">HandlerFunc</span></span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// LoggerToMQ 日志记录到 MQ</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">LoggerToMQ</span><span class="params">()</span> <span class="title">gin</span>.<span class="title">HandlerFunc</span></span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> golang </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+            <tag> log </tag>
+            
+            <tag> logrus </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>go-git</title>
+      <link href="/2020/04/01/go-git/"/>
+      <url>/2020/04/01/go-git/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://github.com/src-d/go-git" target="_blank" rel="noopener">go-git</a></p><a id="more"></a><h2 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Clone</span><span class="params">(ctx *gin.Context)</span></span> &#123;</span><br><span class="line"><span class="comment">// Clones the repository into the given dir, just as a normal git clone does</span></span><br><span class="line">url := <span class="string">"http://git.shinyinfo.com.cn/zousu/devops.git"</span></span><br><span class="line">dir := <span class="string">"/home/yyg/workspace/gogit/devops"</span></span><br><span class="line">username := <span class="string">"yongga@mail.com"</span></span><br><span class="line">password := <span class="string">"passwd"</span></span><br><span class="line"></span><br><span class="line">buf := bytes.NewBufferString(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">r, err := git.PlainClone(dir, <span class="literal">false</span>, &amp;git.CloneOptions&#123;</span><br><span class="line">URL: url,</span><br><span class="line">Auth: &amp;githttp.BasicAuth&#123;</span><br><span class="line">Username: username,</span><br><span class="line">Password: password,</span><br><span class="line">&#125;,</span><br><span class="line">Progress: buf,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// fmt.Println(buf)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">log.Println(err)</span><br><span class="line">ctx.String(http.StatusInternalServerError, err.Error())</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Print the latest commit that was just pulled</span></span><br><span class="line">ref, err := r.Head()</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">log.Println(err)</span><br><span class="line">ctx.String(http.StatusInternalServerError, err.Error())</span><br><span class="line">ctx.AbortWithError(http.StatusInternalServerError, err)</span><br><span class="line">&#125;</span><br><span class="line">commit, err := r.CommitObject(ref.Hash())</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">log.Println(err)</span><br><span class="line">ctx.String(http.StatusInternalServerError, err.Error())</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line">fmt.Println(<span class="string">"last commit"</span>, commit)</span><br><span class="line">ctx.String(http.StatusOK, buf.String())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> go </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>react</title>
+      <link href="/2020/01/16/react/"/>
+      <url>/2020/01/16/react/</url>
+      
+        <content type="html"><![CDATA[<h1 id="react-hooks"><a href="#react-hooks" class="headerlink" title="react hooks"></a>react hooks</h1><h1 id="react-高阶组件"><a href="#react-高阶组件" class="headerlink" title="react 高阶组件"></a>react 高阶组件</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>golang</title>
+      <link href="/2020/01/14/golang/"/>
+      <url>/2020/01/14/golang/</url>
+      
+        <content type="html"><![CDATA[<h1 id="golang-文档资料"><a href="#golang-文档资料" class="headerlink" title="golang 文档资料"></a>golang 文档资料</h1><p><a href="https://books.studygolang.com/" target="_blank" rel="noopener">golang books</a><br><a href="https://books.studygolang.com/gopl-zh/ch3/ch3-01.html" target="_blank" rel="noopener">gopl</a><br><a href="https://learnxinyminutes.com/docs/zh-cn/go-cn/" target="_blank" rel="noopener">learnxinyminutes</a><br><a href="https://go.dev/" target="_blank" rel="noopener">go dev</a></p><a id="more"></a><h1 id="golang-data-type"><a href="#golang-data-type" class="headerlink" title="golang data type"></a>golang data type</h1><p>从底层而言，所有的数据都是由比特组成，但计算机一般操作的是固定大小的数，如整数、浮点数、比特数组、内存地址等。进一步将这些数组织在一起，就可表达更多的对象，例如数据包、像素点、诗歌，甚至其他任何对象。Go语言提供了丰富的数据组织形式，这依赖于Go语言内置的数据类型。这些内置的数据类型，兼顾了硬件的特性和表达复杂数据结构的便捷性。</p><p>Go语言将数据类型分为四类：基础类型、复合类型、引用类型和接口类型。本章介绍基础类型，包括：数字、字符串和布尔型。复合数据类型——数组和结构体——是通过组合简单类型，来表达更加复杂的数据结构。引用类型包括指针、切片、字典、函数、通道，虽然数据种类很多，但它们都是对程序中一个变量或状态的间接引用。这意味着对任一引用类型数据的修改都会影响所有该引用的拷贝。</p><img src="/2020/01/14/golang/Go+data+types.svg" class="" title="Golang data types"><img src="/2020/01/14/golang/Go+numeric+types.svg" class="" title="Golang numeric types"><h1 id="golang-main-pkg"><a href="#golang-main-pkg" class="headerlink" title="golang main pkg"></a>golang main pkg</h1><p>mian包里，使用go run main.go，编译器只会加载main.go这个文件，不会加载main包里的其他文件，只有非main包里的文件才会通过依赖去自动加载。所以需要输入多个文件作为参数。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ go run main.go a.go b.go</span><br></pre></td></tr></table></figure><h1 id="golang-pkg-第三方库"><a href="#golang-pkg-第三方库" class="headerlink" title="golang pkg 第三方库"></a>golang pkg 第三方库</h1><h2 id="web框架"><a href="#web框架" class="headerlink" title="web框架"></a>web框架</h2><p>gin<br>echo<br>gofiber</p><h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><p>gorm</p><h2 id="日志处理"><a href="#日志处理" class="headerlink" title="日志处理"></a>日志处理</h2><p>logrus<br>zap</p><p>gin log response body<br><a href="https://stackoverflow.com/questions/38501325/how-to-log-response-body-in-gin" target="_blank" rel="noopener">https://stackoverflow.com/questions/38501325/how-to-log-response-body-in-gin</a></p><h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p>go-git</p><h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><p>casbin</p><h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p><a href="https://github.com/valyala/fasttemplate" target="_blank" rel="noopener">fasttemplate</a></p><h3 id="交互式命令行提示"><a href="#交互式命令行提示" class="headerlink" title="交互式命令行提示"></a>交互式命令行提示</h3><p><a href="https://github.com/AlecAivazis/survey" target="_blank" rel="noopener">survey</a></p><img src="/2020/01/14/golang/survey.gif" class="" title="survey"><h1 id="golang-编码问题"><a href="#golang-编码问题" class="headerlink" title="golang 编码问题"></a>golang 编码问题</h1><p>Go里面内建仅支持UTF8字符串编码，因此如果你用fmt.Printf之类的函数无法将GBK,GB2312等编码随意转换打印。在 Golang 中转换 UTF-8 与 GBK 编码的文本，可以使用 Go 官方的 golang.org/x/text 包实现</p><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line"><span class="string">"bytes"</span></span><br><span class="line"><span class="string">"fmt"</span></span><br><span class="line"><span class="string">"golang.org/x/text/encoding/simplifiedchinese"</span></span><br><span class="line"><span class="string">"golang.org/x/text/encoding/traditionalchinese"</span></span><br><span class="line"><span class="string">"golang.org/x/text/transform"</span></span><br><span class="line"><span class="string">"io/ioutil"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">//convert GBK to UTF-8</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DecodeGBK</span><span class="params">(s []<span class="keyword">byte</span>)</span> <span class="params">([]<span class="keyword">byte</span>, error)</span></span> &#123;</span><br><span class="line">I := bytes.NewReader(s)</span><br><span class="line">O := transform.NewReader(I, simplifiedchinese.GBK.NewDecoder())</span><br><span class="line">d, e := ioutil.ReadAll(O)</span><br><span class="line"><span class="keyword">if</span> e != <span class="literal">nil</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">nil</span>, e</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> d, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//convert UTF-8 to GBK</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">EncodeGBK</span><span class="params">(s []<span class="keyword">byte</span>)</span> <span class="params">([]<span class="keyword">byte</span>, error)</span></span> &#123;</span><br><span class="line">I := bytes.NewReader(s)</span><br><span class="line">O := transform.NewReader(I, simplifiedchinese.GBK.NewEncoder())</span><br><span class="line">d, e := ioutil.ReadAll(O)</span><br><span class="line"><span class="keyword">if</span> e != <span class="literal">nil</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">nil</span>, e</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> d, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//convert BIG5 to UTF-8</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DecodeBig5</span><span class="params">(s []<span class="keyword">byte</span>)</span> <span class="params">([]<span class="keyword">byte</span>, error)</span></span> &#123;</span><br><span class="line">I := bytes.NewReader(s)</span><br><span class="line">O := transform.NewReader(I, traditionalchinese.Big5.NewDecoder())</span><br><span class="line">d, e := ioutil.ReadAll(O)</span><br><span class="line"><span class="keyword">if</span> e != <span class="literal">nil</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">nil</span>, e</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> d, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//convert UTF-8 to BIG5</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">EncodeBig5</span><span class="params">(s []<span class="keyword">byte</span>)</span> <span class="params">([]<span class="keyword">byte</span>, error)</span></span> &#123;</span><br><span class="line">I := bytes.NewReader(s)</span><br><span class="line">O := transform.NewReader(I, traditionalchinese.Big5.NewEncoder())</span><br><span class="line">d, e := ioutil.ReadAll(O)</span><br><span class="line"><span class="keyword">if</span> e != <span class="literal">nil</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">nil</span>, e</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> d, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">utf8Byte := []<span class="keyword">byte</span>(<span class="string">"UTF-8字符串"</span>)</span><br><span class="line">fmt.Println(<span class="keyword">string</span>(utf8Byte))</span><br><span class="line"></span><br><span class="line"><span class="comment">// UTF-8 转 BIG5</span></span><br><span class="line">s, _ := EncodeBig5(utf8Byte)</span><br><span class="line">fmt.Println(<span class="keyword">string</span>(s))</span><br><span class="line"></span><br><span class="line"><span class="comment">// BIG5 转 UTF-8</span></span><br><span class="line">s, _ = DecodeBig5(s)</span><br><span class="line">fmt.Println(<span class="keyword">string</span>(s))</span><br><span class="line"></span><br><span class="line"><span class="comment">// UTF-8 转 GBK</span></span><br><span class="line">s, _ = EncodeGBK(s)</span><br><span class="line">fmt.Println(<span class="keyword">string</span>(s))</span><br><span class="line"></span><br><span class="line"><span class="comment">// GBK 转 UTF-8</span></span><br><span class="line">s, _ = DecodeGBK(s)</span><br><span class="line">fmt.Println(<span class="keyword">string</span>(s))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> golang </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+            <tag> golang </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>go-antman</title>
+      <link href="/2020/01/13/go-antman/"/>
+      <url>/2020/01/13/go-antman/</url>
+      
+        <content type="html"><![CDATA[<h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+            <tag> golang </tag>
+            
+            <tag> agent </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>go-build</title>
+      <link href="/2020/01/09/go-build/"/>
+      <url>/2020/01/09/go-build/</url>
+      
+        <content type="html"><![CDATA[<h1 id="go-build"><a href="#go-build" class="headerlink" title="go build"></a>go build</h1><p>By default, go build combines symbol and debug info with binary files. However, you can remove the symbol and debug info with go build -ldflags “-s -w”.</p><a id="more"></a><p>go build  默认参数是 debug 版，加编译参数-ldflags “-w -s”才是 release. -w 为去掉调试信息，-s 为去掉符号表,文件大小会减小。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go build -ldflags <span class="string">"-w -s"</span></span><br></pre></td></tr></table></figure><h1 id="golang-交叉编译"><a href="#golang-交叉编译" class="headerlink" title="golang 交叉编译"></a>golang 交叉编译</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GOOS=linux GOARCH=amd64 go build hello.go</span><br></pre></td></tr></table></figure><p>参数解析</p><p>GOOS：目标操作系统<br>GOARCH：目标操作系统的架构</p><table><thead><tr><th>OS</th><th>ARCH</th><th>OS version</th></tr></thead><tbody><tr><td>linux</td><td>386 / amd64 / arm</td><td>&gt;= Linux 2.6</td></tr><tr><td>darwin</td><td>386 / amd64</td><td>OS X (Snow Leopard + Lion)</td></tr><tr><td>freebsd</td><td>386 / amd64</td><td>&gt;= FreeBSD 7</td></tr><tr><td>windows</td><td>386 / amd64</td><td>&gt;= Windows 2000</td></tr></tbody></table><p><a href="https://golang.org/doc/install/source#environment" target="_blank" rel="noopener">参数官网地址</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> golang </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> golang </tag>
+            
+            <tag> build </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>cobra</title>
+      <link href="/2020/01/08/cobra/"/>
+      <url>/2020/01/08/cobra/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Cobra介绍"><a href="#Cobra介绍" class="headerlink" title="Cobra介绍"></a>Cobra介绍</h1><p>Cobra是一个库，其提供简单的接口来创建强大现代的CLI接口，类似于git或者go工具。同时，它也是一个应用，用来生成应用框架，从而开发以Cobra为基础的应用。Docker和Kubernetes源码中使用了Cobra。</p><p>概念<br>Cobra有三个基本概念commands,arguments和flags。其中commands代表行为，arguments代表数值，flags代表对行为的改变。</p><a id="more"></a><p>基本模型如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">APPNAME COMMAND ARG --FLAG</span><br></pre></td></tr></table></figure><h1 id="安装cobra"><a href="#安装cobra" class="headerlink" title="安装cobra"></a>安装cobra</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/spf13/cobra/cobra</span><br></pre></td></tr></table></figure><h1 id="安装cobra可执行命令"><a href="#安装cobra可执行命令" class="headerlink" title="安装cobra可执行命令"></a>安装cobra可执行命令</h1><p>在文件夹github.com/spf13/cobra/cobra下使用go install在$GOPATH/bin路径下生成cobra.exe可执行命令。</p><h1 id="使用Cobra"><a href="#使用Cobra" class="headerlink" title="使用Cobra"></a>使用Cobra</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cobra init demo</span><br></pre></td></tr></table></figure><h1 id="添加命令"><a href="#添加命令" class="headerlink" title="添加命令"></a>添加命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cobra add version</span><br></pre></td></tr></table></figure><h1 id="修改默认usage模板"><a href="#修改默认usage模板" class="headerlink" title="修改默认usage模板"></a>修改默认usage模板</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rootCmd.setUsageTemplate(s <span class="keyword">string</span>)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> golang </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+            <tag> cobra </tag>
+            
+            <tag> cli </tag>
+            
+            <tag> cmd </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nginx-prometheus</title>
+      <link href="/2020/01/08/nginx-prometheus/"/>
+      <url>/2020/01/08/nginx-prometheus/</url>
+      
+        <content type="html"><![CDATA[<h1 id="监控Nginx服务器"><a href="#监控Nginx服务器" class="headerlink" title="监控Nginx服务器"></a>监控Nginx服务器</h1><p>由于官方没有提供Nginx直接可用的exporter，Nginx的监控要相对复杂一些。这里使用的是三方提供nginx-vts-exporter。</p><h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><p>由于nginx-vts-exporter依赖于Nginx的nginx-module-vts模块，所以这里需要重新编译下Nginx。</p><a id="more"></a><ol><li>下载对应软件包<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /root</span><br><span class="line">$ wget <span class="string">'http://nginx.org/download/nginx-1.9.2.tar.gz'</span></span><br><span class="line">$ git <span class="built_in">clone</span> git://github.com/vozlt/nginx-module-vts.git</span><br></pre></td></tr></table></figure></li><li>编译安装Nginx<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential</span><br><span class="line">$ tar xzvf nginx-1.9.2.tar.gz</span><br><span class="line">$ <span class="built_in">cd</span> nginx-1.9.2</span><br><span class="line">$ ./configure --add-module=/root/nginx-module-vts</span><br><span class="line">$ make &amp;&amp; make install</span><br></pre></td></tr></table></figure></li><li>修改Nginx配置 (/usr/local/nginx/conf/nginx.conf)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">    vhost_traffic_status_zone;</span><br><span class="line"></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line"></span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">        location &#x2F;status &#123;</span><br><span class="line">            vhost_traffic_status_display;</span><br><span class="line">            vhost_traffic_status_display_format html;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>验证nginx-module-vts模块<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">访问 http:&#x2F;&#x2F;IP&#x2F;status</span><br></pre></td></tr></table></figure></li></ol><h2 id="exporter-metrics"><a href="#exporter-metrics" class="headerlink" title="exporter metrics"></a>exporter metrics</h2><h3 id="安装nginx-vts-exporter"><a href="#安装nginx-vts-exporter" class="headerlink" title="安装nginx-vts-exporter"></a>安装nginx-vts-exporter</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ wget -O nginx-vts-exporter-0.5.zip https:&#x2F;&#x2F;github.com&#x2F;hnlq715&#x2F;nginx-vts-exporter&#x2F;archive&#x2F;v0.5.zip</span><br><span class="line">$ unzip nginx-vts-exporter-0.5.zip</span><br><span class="line">$ mv nginx-vts-exporter-0.5  &#x2F;usr&#x2F;local&#x2F;prometheus&#x2F;nginx-vts-exporter</span><br><span class="line">$ chmod +x &#x2F;usr&#x2F;local&#x2F;prometheus&#x2F;nginx-vts-exporter&#x2F;bin&#x2F;nginx-vts-exporter</span><br></pre></td></tr></table></figure><h3 id="创建Systemd服务"><a href="#创建Systemd服务" class="headerlink" title="创建Systemd服务"></a>创建Systemd服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ vim &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;nginx_vts_exporter.service</span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description&#x3D;nginx_exporter</span><br><span class="line">After&#x3D;network.target</span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">User&#x3D;prometheus</span><br><span class="line">ExecStart&#x3D;&#x2F;usr&#x2F;local&#x2F;prometheus&#x2F;nginx-vts-exporter&#x2F;bin&#x2F;nginx-vts-exporter -nginx.scrape_uri&#x3D;http:&#x2F;&#x2F;localhost&#x2F;status&#x2F;format&#x2F;json</span><br><span class="line">Restart&#x3D;on-failure</span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure><h3 id="启动nginx-vts-exporter"><a href="#启动nginx-vts-exporter" class="headerlink" title="启动nginx-vts-exporter"></a>启动nginx-vts-exporter</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl start nginx_vts_exporter.service</span><br></pre></td></tr></table></figure><h3 id="修改prometheus-yml，加入下面的监控目标："><a href="#修改prometheus-yml，加入下面的监控目标：" class="headerlink" title="修改prometheus.yml，加入下面的监控目标："></a>修改prometheus.yml，加入下面的监控目标：</h3><p>nginx-vts-exporter默认的抓取地址为<a href="http://IP:9913/metrics" target="_blank" rel="noopener">http://IP:9913/metrics</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 监控 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+            <tag> prometheus </tag>
+            
+            <tag> 监控 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>go-jwt</title>
+      <link href="/2020/01/07/go-jwt/"/>
+      <url>/2020/01/07/go-jwt/</url>
+      
+        <content type="html"><![CDATA[<h2 id="jwt-生成"><a href="#jwt-生成" class="headerlink" title="jwt 生成"></a>jwt 生成</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// GenerateJWT  jwt generate</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(service UserLoginService)</span> <span class="title">GenerateJWT</span><span class="params">(user model.User)</span> <span class="params">(<span class="keyword">string</span>, error)</span></span> &#123;</span><br><span class="line">expiresTime := time.Now().Unix() + <span class="keyword">int64</span>(config.OneDayOfHours)</span><br><span class="line">ID := fmt.Sprint(user.ID)</span><br><span class="line">claims := CustomClaims&#123;</span><br><span class="line">user.Username,</span><br><span class="line">jwt.StandardClaims&#123;</span><br><span class="line">Audience:  <span class="string">"Audience"</span>,        <span class="comment">// 受众</span></span><br><span class="line">ExpiresAt: expiresTime,       <span class="comment">// 失效时间</span></span><br><span class="line">Id:        ID,                <span class="comment">// 编号</span></span><br><span class="line">IssuedAt:  time.Now().Unix(), <span class="comment">// 签发时间</span></span><br><span class="line">Issuer:    <span class="string">"gin project"</span>,     <span class="comment">// 签发人</span></span><br><span class="line">NotBefore: time.Now().Unix(), <span class="comment">// 生效时间</span></span><br><span class="line">Subject:   <span class="string">"login"</span>,           <span class="comment">// 主题</span></span><br><span class="line">&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tokenClaims := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过密码和保留字段加密</span></span><br><span class="line"><span class="keyword">var</span> jwtSecret = []<span class="keyword">byte</span>(config.Secret + user.PasswordDigest)</span><br><span class="line">token, err := tokenClaims.SignedString(jwtSecret)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token, err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="中间件验证代码"><a href="#中间件验证代码" class="headerlink" title="中间件验证代码"></a>中间件验证代码</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> middleware</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line"><span class="string">"encoding/json"</span></span><br><span class="line"><span class="string">"gin_project/config"</span></span><br><span class="line"><span class="string">"gin_project/model"</span></span><br><span class="line"><span class="string">"log"</span></span><br><span class="line"><span class="string">"net/http"</span></span><br><span class="line"><span class="string">"strconv"</span></span><br><span class="line"><span class="string">"strings"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"github.com/dgrijalva/jwt-go"</span></span><br><span class="line"><span class="string">"github.com/gin-gonic/gin"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// CustomClaims 自定义jwt</span></span><br><span class="line"><span class="keyword">type</span> CustomClaims <span class="keyword">struct</span> &#123;</span><br><span class="line">User <span class="keyword">string</span> <span class="string">`json:"user"`</span></span><br><span class="line">jwt.StandardClaims</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Auth 权限认证</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Auth</span><span class="params">()</span> <span class="title">gin</span>.<span class="title">HandlerFunc</span></span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(context *gin.Context)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">result := model.Result&#123;</span><br><span class="line">Code:    http.StatusUnauthorized,</span><br><span class="line">Message: <span class="string">"无法认证，重新登录"</span>,</span><br><span class="line">Data:    <span class="literal">nil</span>,</span><br><span class="line">&#125;</span><br><span class="line">auth := context.Request.Header.Get(<span class="string">"Authorization"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(auth) == <span class="number">0</span> &#123;</span><br><span class="line">context.Abort()</span><br><span class="line">context.JSON(http.StatusUnauthorized, result)</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">auth = strings.Fields(auth)[<span class="number">1</span>]</span><br><span class="line"><span class="comment">// 校验token</span></span><br><span class="line">claims, err := parseToken(auth)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">result.Message = <span class="string">"token error "</span> + err.Error()</span><br><span class="line">context.AbortWithStatusJSON(http.StatusUnauthorized, result)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="built_in">println</span>(<span class="string">"token 正确"</span>)</span><br><span class="line">&#125;</span><br><span class="line">context.Set(<span class="string">"claims"</span>, claims)</span><br><span class="line"></span><br><span class="line">context.Next()</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">parseToken</span><span class="params">(token <span class="keyword">string</span>)</span> <span class="params">(*CustomClaims, error)</span></span> &#123;</span><br><span class="line"><span class="comment">// 分割出来载体</span></span><br><span class="line">payload := strings.Split(token, <span class="string">"."</span>)</span><br><span class="line">bytes, e := jwt.DecodeSegment(payload[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> e != <span class="literal">nil</span> &#123;</span><br><span class="line"><span class="built_in">println</span>(e.Error())</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> cm CustomClaims</span><br><span class="line"><span class="comment">//使用 json.Unmarshal(data []byte, v interface&#123;&#125;)进行转换,返回 error 信息</span></span><br><span class="line"><span class="keyword">if</span> err := json.Unmarshal(bytes, &amp;cm); err != <span class="literal">nil</span> &#123;</span><br><span class="line">log.Println(err)</span><br><span class="line">&#125;</span><br><span class="line">i := cm.Id</span><br><span class="line">ID, err := strconv.Atoi(i)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line"><span class="built_in">println</span>(err.Error())</span><br><span class="line">&#125;</span><br><span class="line">user := model.User&#123;&#125;</span><br><span class="line">user.ID = <span class="keyword">uint</span>(ID)</span><br><span class="line">u := model.User.QueryByID(user)</span><br><span class="line">jwtToken, err := jwt.ParseWithClaims(token, &amp;CustomClaims&#123;&#125;,</span><br><span class="line"><span class="function"><span class="keyword">func</span><span class="params">(token *jwt.Token)</span> <span class="params">(i <span class="keyword">interface</span>&#123;&#125;, e error)</span></span> &#123;</span><br><span class="line"><span class="keyword">return</span> []<span class="keyword">byte</span>(config.Secret + u.PasswordDigest), <span class="literal">nil</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">if</span> err == <span class="literal">nil</span> &amp;&amp; jwtToken != <span class="literal">nil</span> &#123;</span><br><span class="line"><span class="keyword">if</span> claim, ok := jwtToken.Claims.(*CustomClaims); ok &amp;&amp; jwtToken.Valid &#123;</span><br><span class="line"><span class="keyword">return</span> claim, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> golang </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+            <tag> gin </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>golang gin-cors</title>
+      <link href="/2020/01/07/gin-cors/"/>
+      <url>/2020/01/07/gin-cors/</url>
+      
+        <content type="html"><![CDATA[<h1 id="golang-gin框架-跨域访问配置代码"><a href="#golang-gin框架-跨域访问配置代码" class="headerlink" title="golang gin框架 跨域访问配置代码"></a>golang gin框架 跨域访问配置代码</h1><h2 id="中间件代码"><a href="#中间件代码" class="headerlink" title="中间件代码"></a>中间件代码</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> middleware</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line"><span class="string">"github.com/gin-contrib/cors"</span></span><br><span class="line"><span class="string">"github.com/gin-gonic/gin"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Cors 跨域配置</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Cors</span><span class="params">()</span> <span class="title">gin</span>.<span class="title">HandlerFunc</span></span> &#123;</span><br><span class="line">config := cors.DefaultConfig()</span><br><span class="line">config.AllowMethods = []<span class="keyword">string</span>&#123;<span class="string">"GET"</span>, <span class="string">"POST"</span>, <span class="string">"PUT"</span>, <span class="string">"PATCH"</span>, <span class="string">"DELETE"</span>, <span class="string">"HEAD"</span>, <span class="string">"OPTIONS"</span>&#125;</span><br><span class="line">config.AllowHeaders = []<span class="keyword">string</span>&#123;<span class="string">"Origin"</span>, <span class="string">"Content-Length"</span>, <span class="string">"Content-Type"</span>, <span class="string">"Cookie"</span>&#125;</span><br><span class="line"><span class="keyword">if</span> gin.Mode() == gin.ReleaseMode &#123;</span><br><span class="line"><span class="comment">// 生产环境需要配置跨域域名，否则403</span></span><br><span class="line">config.AllowOrigins = []<span class="keyword">string</span>&#123;<span class="string">"http://www.example.com"</span>&#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">config.AllowOrigins = []<span class="keyword">string</span>&#123;<span class="string">"*"</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line">config.AllowCredentials = <span class="literal">true</span></span><br><span class="line"><span class="keyword">return</span> cors.New(config)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="路由配置"><a href="#路由配置" class="headerlink" title="路由配置"></a>路由配置</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router := gin.Default()</span><br><span class="line"><span class="comment">// cors 跨域设置</span></span><br><span class="line">router.Use(middleware.Cors())</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> golang </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+            <tag> gin </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>rails cors</title>
+      <link href="/2018/09/17/rails-cors/"/>
+      <url>/2018/09/17/rails-cors/</url>
+      
+        <content type="html"><![CDATA[<h1 id="rails-cors-跨域访问设置"><a href="#rails-cors-跨域访问设置" class="headerlink" title="rails cors 跨域访问设置"></a>rails cors 跨域访问设置</h1><h2 id="gemfile"><a href="#gemfile" class="headerlink" title="gemfile"></a>gemfile</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem ‘rack-cors’, <span class="symbol">require:</span> ‘rack/cors’</span><br></pre></td></tr></table></figure><h2 id="config-application-rb"><a href="#config-application-rb" class="headerlink" title="config/application.rb"></a>config/application.rb</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">config.middleware.insert_before <span class="number">0</span>, Rack::Cors <span class="keyword">do</span></span><br><span class="line">  allow <span class="keyword">do</span></span><br><span class="line">    origins ‘‘</span><br><span class="line">    resource ‘‘, <span class="symbol">headers:</span> <span class="symbol">:any</span>, <span class="symbol">methods:</span> [<span class="symbol">:get</span>, <span class="symbol">:post</span>, <span class="symbol">:options</span>]</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> rails </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> rails </tag>
+            
+            <tag> cors </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Markdown 认识与入门</title>
+      <link href="/2018/09/12/markdown/"/>
+      <url>/2018/09/12/markdown/</url>
+      
+        <content type="html"><![CDATA[<p>Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑，Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。</p><a id="more"></a><h2 id="认识-Markdown"><a href="#认识-Markdown" class="headerlink" title="认识 Markdown"></a>认识 Markdown</h2><p>在刚才的导语里提到，Markdown 是一种用来写作的轻量级「标记语言」，它用简洁的语法代替排版，而不像一般我们用的字处理软件 Word 或 Pages 有大量的排版、字体设置。它使我们专心于码字，用「标记」语法，来代替常见的排版格式。例如此文从内容到格式，甚至插图，键盘就可以通通搞定了。目前来看，支持 Markdown 语法的编辑器有很多，包括很多网站（例如简书）也支持了 Markdown 的文字录入。Markdown 从写作到完成，导出格式随心所欲，你可以导出 HTML 格式的文件用来网站发布，也可以十分方便的导出 PDF 格式，这种格式写出的简历更能得到 HR 的好感。甚至可以利用 CloudApp 这种云服务工具直接上传至网页用来分享你的文章，全球最大的轻博客平台 Tumblr，也支持使用 Mou 这类 Markdown 工具进行编辑并直接上传。</p><h3 id="Markdown-官方文档"><a href="#Markdown-官方文档" class="headerlink" title="Markdown 官方文档"></a>Markdown 官方文档</h3><ul><li><p><a href="http://daringfireball.net/projects/markdown/syntax" target="_blank" rel="noopener">创始人 John Gruber 的 Markdown 语法说明</a></p></li><li><p><a href="http://wowubuntu.com/markdown/#list" target="_blank" rel="noopener">Markdown 中文版语法说明</a></p></li></ul><h2 id="使用-Markdown-的优点"><a href="#使用-Markdown-的优点" class="headerlink" title="使用 Markdown 的优点"></a>使用 Markdown 的优点</h2><ul><li>专注你的文字内容而不是排版样式。</li><li>轻松的导出 HTML、PDF 和本身的 .md 文件。</li><li>纯文本内容，兼容所有的文本编辑器与字处理软件。</li><li>可读，直观。适合所有人的写作语言。</li></ul><h2 id="Markdown-语法的简要规则"><a href="#Markdown-语法的简要规则" class="headerlink" title="Markdown 语法的简要规则"></a>Markdown 语法的简要规则</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>标题是每篇文章都需要也是最常用的格式，在 Markdown 中，如果一段文字被定义为标题，只要在这段文字前加<code>#</code>号即可。</p><p><code># 一级标题</code></p><p><code>## 二级标题</code></p><p><code>### 三级标题</code></p><p>以此类推，总共六级标题，建议在井号后加一个空格，这是最标准的 Markdown 语法。</p><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>熟悉 HTML 的同学肯定知道有序列表与无序列表的区别，在 Markdown 下，列表的显示只需要在文字前加上<code>-</code> 或 <code>*</code> 即可变为无序列表，有序列表则直接在文字前加 <code>1.</code> <code>2.</code> <code>3.</code> 符号要和文字之间加上一个字符的空格。</p><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>如果你需要引用一小段别处的句子，那么就要用引用的格式。</p><p><code>&gt; 例如这样</code></p><p>只需要在文本前加入 <code>&gt;</code> 这种尖括号（大于号）即可</p><h3 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h3><p>插入链接与插入图片的语法很像，区别在一个 !号</p><p>链接 <code>[Baidu](https://www.baidu.com)</code><br>图片 <code>![img_name](img_url)</code></p><h3 id="粗体与斜体"><a href="#粗体与斜体" class="headerlink" title="粗体与斜体"></a>粗体与斜体</h3><p>Markdown 的粗体和斜体也非常简单，用两个 <code>*</code> 包含一段文本就是粗体的语法，用一个 <code>*</code> 包含一段文本就是斜体的语法。</p><p>例如：这里是<strong>粗体</strong> 这里是<em>斜体</em></p><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>表格是Markdown 比较累人的地方，例子如下：</p><p>| Tables        | Are           | Cool  |</p><p>| ————- |:————-:| —–:|</p><p>| col 3 is      | right-aligned | $1600 |</p><p>| col 2 is      | centered      |   $12 |</p><p>| zebra stripes | are neat      |    $1 |</p><h3 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a>代码框</h3><p>如果你是个程序猿，需要在文章里优雅的引用代码框，在 Markdown 下实现也非常简单，只需要用两个 ``` 把中间的代码包裹起来，如 <code>code</code>。</p><p><code>def func  puts &quot;test&quot; end</code></p><h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>分割线的语法只需要另起一行，连续输入三个星号 *** 即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> markdown </tag>
+            
+            <tag> md </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo</title>
+      <link href="/2017/09/12/hello-world/"/>
+      <url>/2017/09/12/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><h3 id="Create-a-page"><a href="#Create-a-page" class="headerlink" title="Create a page"></a>Create a page</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">"New page"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><p>执行命令之前安装</p><blockquote><p>yarn add hexo-deployer-git</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">or</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p><h3 id="搜索功能"><a href="#搜索功能" class="headerlink" title="搜索功能"></a>搜索功能</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-generator-search</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
