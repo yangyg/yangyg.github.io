@@ -57,7 +57,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/01/14/golang/Go+numeric+types.svg">
 <meta property="og:image" content="http://yoursite.com/2020/01/14/golang/survey.gif">
 <meta property="article:published_time" content="2020-01-14T06:46:09.000Z">
-<meta property="article:modified_time" content="2021-01-07T06:28:00.753Z">
+<meta property="article:modified_time" content="2021-01-21T02:55:09.448Z">
 <meta property="article:author" content="Y">
 <meta property="article:tag" content="go">
 <meta property="article:tag" content="golang">
@@ -244,7 +244,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-07 14:28:00" itemprop="dateModified" datetime="2021-01-07T14:28:00+08:00">2021-01-07</time>
+                <time title="修改时间：2021-01-21 10:55:09" itemprop="dateModified" datetime="2021-01-21T10:55:09+08:00">2021-01-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -271,7 +271,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>2.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -299,7 +299,7 @@
 
 <img src="/2020/01/14/golang/Go+numeric+types.svg" class="" title="Golang numeric types">
 
-<h1 id="golang-main-pkg"><a href="#golang-main-pkg" class="headerlink" title="golang main pkg"></a>golang main pkg</h1><p>mian包里，使用go run main.go，编译器只会加载main.go这个文件，不会加载main包里的其他文件，只有非main包里的文件才会通过依赖去自动加载。所以需要输入多个文件作为参数。</p>
+<h1 id="golang-main-pkg"><a href="#golang-main-pkg" class="headerlink" title="golang main pkg"></a>golang main pkg</h1><p>main包里，使用go run main.go，编译器只会加载main.go这个文件，不会加载main包里的其他文件，只有非main包里的文件才会通过依赖去自动加载。所以需要输入多个文件作为参数。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ go run main.go a.go b.go</span><br></pre></td></tr></table></figure>
 
 <h1 id="golang-pkg-第三方库"><a href="#golang-pkg-第三方库" class="headerlink" title="golang pkg 第三方库"></a>golang pkg 第三方库</h1><h2 id="web框架"><a href="#web框架" class="headerlink" title="web框架"></a>web框架</h2><p>gin<br>echo<br>gofiber</p>
@@ -319,6 +319,14 @@
 <h2 id="压测工具"><a href="#压测工具" class="headerlink" title="压测工具"></a>压测工具</h2><p><a href="https://k6.io/docs/getting-started/running-k6" target="_blank" rel="noopener">k6</a></p>
 <h1 id="golang-编码问题"><a href="#golang-编码问题" class="headerlink" title="golang 编码问题"></a>golang 编码问题</h1><p>Go里面内建仅支持UTF8字符串编码，因此如果你用fmt.Printf之类的函数无法将GBK,GB2312等编码随意转换打印。在 Golang 中转换 UTF-8 与 GBK 编码的文本，可以使用 Go 官方的 golang.org/x/text 包实现</p>
 <figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"bytes"</span></span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"golang.org/x/text/encoding/simplifiedchinese"</span></span><br><span class="line">	<span class="string">"golang.org/x/text/encoding/traditionalchinese"</span></span><br><span class="line">	<span class="string">"golang.org/x/text/transform"</span></span><br><span class="line">	<span class="string">"io/ioutil"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">//convert GBK to UTF-8</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DecodeGBK</span><span class="params">(s []<span class="keyword">byte</span>)</span> <span class="params">([]<span class="keyword">byte</span>, error)</span></span> &#123;</span><br><span class="line">	I := bytes.NewReader(s)</span><br><span class="line">	O := transform.NewReader(I, simplifiedchinese.GBK.NewDecoder())</span><br><span class="line">	d, e := ioutil.ReadAll(O)</span><br><span class="line">	<span class="keyword">if</span> e != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, e</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> d, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//convert UTF-8 to GBK</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">EncodeGBK</span><span class="params">(s []<span class="keyword">byte</span>)</span> <span class="params">([]<span class="keyword">byte</span>, error)</span></span> &#123;</span><br><span class="line">	I := bytes.NewReader(s)</span><br><span class="line">	O := transform.NewReader(I, simplifiedchinese.GBK.NewEncoder())</span><br><span class="line">	d, e := ioutil.ReadAll(O)</span><br><span class="line">	<span class="keyword">if</span> e != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, e</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> d, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//convert BIG5 to UTF-8</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DecodeBig5</span><span class="params">(s []<span class="keyword">byte</span>)</span> <span class="params">([]<span class="keyword">byte</span>, error)</span></span> &#123;</span><br><span class="line">	I := bytes.NewReader(s)</span><br><span class="line">	O := transform.NewReader(I, traditionalchinese.Big5.NewDecoder())</span><br><span class="line">	d, e := ioutil.ReadAll(O)</span><br><span class="line">	<span class="keyword">if</span> e != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, e</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> d, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//convert UTF-8 to BIG5</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">EncodeBig5</span><span class="params">(s []<span class="keyword">byte</span>)</span> <span class="params">([]<span class="keyword">byte</span>, error)</span></span> &#123;</span><br><span class="line">	I := bytes.NewReader(s)</span><br><span class="line">	O := transform.NewReader(I, traditionalchinese.Big5.NewEncoder())</span><br><span class="line">	d, e := ioutil.ReadAll(O)</span><br><span class="line">	<span class="keyword">if</span> e != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, e</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> d, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	utf8Byte := []<span class="keyword">byte</span>(<span class="string">"UTF-8字符串"</span>)</span><br><span class="line">	fmt.Println(<span class="keyword">string</span>(utf8Byte))</span><br><span class="line"></span><br><span class="line">	<span class="comment">// UTF-8 转 BIG5</span></span><br><span class="line">	s, _ := EncodeBig5(utf8Byte)</span><br><span class="line">	fmt.Println(<span class="keyword">string</span>(s))</span><br><span class="line"></span><br><span class="line">	<span class="comment">// BIG5 转 UTF-8</span></span><br><span class="line">	s, _ = DecodeBig5(s)</span><br><span class="line">	fmt.Println(<span class="keyword">string</span>(s))</span><br><span class="line"></span><br><span class="line">	<span class="comment">// UTF-8 转 GBK</span></span><br><span class="line">	s, _ = EncodeGBK(s)</span><br><span class="line">	fmt.Println(<span class="keyword">string</span>(s))</span><br><span class="line"></span><br><span class="line">	<span class="comment">// GBK 转 UTF-8</span></span><br><span class="line">	s, _ = DecodeGBK(s)</span><br><span class="line">	fmt.Println(<span class="keyword">string</span>(s))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="golang-package-init"><a href="#golang-package-init" class="headerlink" title="golang package init"></a>golang package init</h1><p>每个 package 中每个 init () 函数都会被调用，且顺序固定</p>
+<ul>
+<li>对同一个 go 文件的 init () 调用顺序是从上到下的</li>
+<li>对同一个 package 中不同文件是按文件名字符串比较 “从小到大” 顺序调用各文件中的 init () 函数，对于</li>
+<li>对不同的 package，如果不相互依赖的话，按照 main 包中 “先 import 的后调用” 的顺序调用其包中的 init ()</li>
+<li>如果 package 存在依赖，则先调用最早被依赖的 package 中的 init ()</li>
+</ul>
 
     </div>
 
@@ -405,7 +413,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-文档资料"><span class="nav-number">1.</span> <span class="nav-text">golang 文档资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-data-type"><span class="nav-number">2.</span> <span class="nav-text">golang data type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-main-pkg"><span class="nav-number">3.</span> <span class="nav-text">golang main pkg</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-pkg-第三方库"><span class="nav-number">4.</span> <span class="nav-text">golang pkg 第三方库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#web框架"><span class="nav-number">4.1.</span> <span class="nav-text">web框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">4.2.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志处理"><span class="nav-number">4.3.</span> <span class="nav-text">日志处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git"><span class="nav-number">4.4.</span> <span class="nav-text">git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权限"><span class="nav-number">4.5.</span> <span class="nav-text">权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板"><span class="nav-number">4.6.</span> <span class="nav-text">模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tui"><span class="nav-number">4.7.</span> <span class="nav-text">tui</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-number">4.8.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bot"><span class="nav-number">4.9.</span> <span class="nav-text">bot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#压测工具"><span class="nav-number">4.10.</span> <span class="nav-text">压测工具</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-编码问题"><span class="nav-number">5.</span> <span class="nav-text">golang 编码问题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-文档资料"><span class="nav-number">1.</span> <span class="nav-text">golang 文档资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-data-type"><span class="nav-number">2.</span> <span class="nav-text">golang data type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-main-pkg"><span class="nav-number">3.</span> <span class="nav-text">golang main pkg</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-pkg-第三方库"><span class="nav-number">4.</span> <span class="nav-text">golang pkg 第三方库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#web框架"><span class="nav-number">4.1.</span> <span class="nav-text">web框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">4.2.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志处理"><span class="nav-number">4.3.</span> <span class="nav-text">日志处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git"><span class="nav-number">4.4.</span> <span class="nav-text">git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权限"><span class="nav-number">4.5.</span> <span class="nav-text">权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板"><span class="nav-number">4.6.</span> <span class="nav-text">模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tui"><span class="nav-number">4.7.</span> <span class="nav-text">tui</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-number">4.8.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bot"><span class="nav-number">4.9.</span> <span class="nav-text">bot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#压测工具"><span class="nav-number">4.10.</span> <span class="nav-text">压测工具</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-编码问题"><span class="nav-number">5.</span> <span class="nav-text">golang 编码问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-package-init"><span class="nav-number">6.</span> <span class="nav-text">golang package init</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -419,7 +427,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -435,8 +443,7 @@
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element">
-    <a onclick="tidioChatApi.open();"><i class="fa fa-comment"></i>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
     Chat
   </a>
   </div>
@@ -469,12 +476,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">25k</span>
+    <span title="站点总字数">26k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">23 分钟</span>
+    <span title="站点阅读时长">24 分钟</span>
 </div>
 
         
@@ -541,7 +548,6 @@
 
 
 
-  <script src="//code.tidio.co/fu77g4jhsl8phbyjxrre5tdian8vlxfo.js"></script>
 
 
 

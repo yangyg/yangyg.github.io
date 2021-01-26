@@ -204,6 +204,96 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/07/go-defer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Y">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/07/go-defer/" class="post-title-link" itemprop="url">go_defer</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-07 14:54:03 / 修改时间：15:06:36" itemprop="dateCreated datePublished" datetime="2021-01-07T14:54:03+08:00">2021-01-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/golang/" itemprop="url" rel="index">
+                    <span itemprop="name">golang</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>838</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="go-defer"><a href="#go-defer" class="headerlink" title="go defer"></a>go defer</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">f1</span><span class="params">()</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> res <span class="keyword">int</span></span><br><span class="line">    <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        res++</span><br><span class="line">    &#125;()</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">f2</span><span class="params">()</span> <span class="params">(res <span class="keyword">int</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        res++</span><br><span class="line">    &#125;()</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">f3</span><span class="params">()</span> <span class="params">(res <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        res++</span><br><span class="line">    &#125;()</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">f4</span><span class="params">()</span> <span class="params">(res <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        res++</span><br><span class="line">    &#125;()</span><br><span class="line">    res = <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    x := f1()</span><br><span class="line">    y := f2()</span><br><span class="line">    z := f3()</span><br><span class="line">    zz := f4()</span><br><span class="line">    fmt.Println(<span class="string">"x: "</span>, x, <span class="string">"y: "</span>, y, <span class="string">"z: "</span>, z, zz)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x:  0 y:  1 z:  2</span><br></pre></td></tr></table></figure>
+
+<h1 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h1><p>这里以匿名返回函数f1()作说明，执行过程如下：<br>首先函数返回时会自动创建一个返回变量假设为ret，函数返回时要将res赋值给ret，即有ret = res，也就是说ret=0<br>然后检查函数中是否有defer存在，若有则执行defer中部分，此时就到了res++<br>最后返回ret<br>从上面过程可以看到，函数返回的是ret，即0，虽然defer中res++但是是给res做加减，res和ret是两个变量；</p>
+<p>但是在命名返回值f2()中就会有不一样的结果，因为返回值在函数定义时以经存在，return时不需要再创建另外的变量ret，返回的ret就是res，只有一个变量，所以res++就是给实际返回的ret做加减，最终返回结果当然是1了。</p>
+<p>f3() 等同于 f4()</p>
+<p>defer在命名和匿名返回函数中表现不一样，这是一个很大的坑，使用中要多多注意。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/07/pprof/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -229,7 +319,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-01-07 14:08:12 / 修改时间：14:42:40" itemprop="dateCreated datePublished" datetime="2021-01-07T14:08:12+08:00">2021-01-07</time>
+              <time title="创建时间：2021-01-07 14:08:12 / 修改时间：14:51:56" itemprop="dateCreated datePublished" datetime="2021-01-07T14:08:12+08:00">2021-01-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1030,117 +1120,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/14/git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Y">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/14/git/" class="post-title-link" itemprop="url">git</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-14 16:41:55" itemprop="dateCreated datePublished" datetime="2020-04-14T16:41:55+08:00">2020-04-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-01 10:01:59" itemprop="dateModified" datetime="2020-07-01T10:01:59+08:00">2020-07-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>836</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="git-webhook"><a href="#git-webhook" class="headerlink" title="git webhook"></a>git webhook</h2><h2 id="git-add-参数不同区别"><a href="#git-add-参数不同区别" class="headerlink" title="git add 参数不同区别"></a>git add 参数不同区别</h2><ul>
-<li><p>git add -A  提交所有变化</p>
-</li>
-<li><p>git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)</p>
-</li>
-<li><p>git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件</p>
-</li>
-</ul>
-<h2 id="git-core-autocrlf"><a href="#git-core-autocrlf" class="headerlink" title="git core.autocrlf"></a>git core.autocrlf</h2><p>core.autocrlf<br>假如你正在 Windows 上写程序，而你的同伴用的是其他系统（或相反），你可能会遇到 CRLF 问题。 这是因为 Windows 使用回车（CR）和换行（LF）两个字符来结束一行，而 macOS 和 Linux 只使用换行（LF）一个字符。 虽然这是小问题，但它会极大地扰乱跨平台协作。许多 Windows 上的编辑器会悄悄把行尾的换行字符转换成回车和换行， 或在用户按下 Enter 键时，插入回车和换行两个字符。</p>
-<p>Git 可以在你提交时自动地把回车和换行转换成换行，而在检出代码时把换行转换成回车和换行。 你可以用 core.autocrlf 来打开此项功能。 如果是在 Windows 系统上，把它设置成 true，这样在检出代码时，换行会被转换成回车和换行：</p>
-<blockquote>
-<p>$ git config –global core.autocrlf true</p>
-</blockquote>
-<p>如果使用以换行作为行结束符的 Linux 或 macOS，你不需要 Git 在检出文件时进行自动的转换； 然而当一个以回车加换行作为行结束符的文件不小心被引入时，你肯定想让 Git 修正。 你可以把 core.autocrlf 设置成 input 来告诉 Git 在提交时把回车和换行转换成换行，检出时不转换：</p>
-<blockquote>
-<p>$ git config –global core.autocrlf input</p>
-</blockquote>
-<p>这样在 Windows 上的检出文件中会保留回车和换行，而在 macOS 和 Linux 上，以及版本库中会保留换行。</p>
-<p>如果你是 Windows 程序员，且正在开发仅运行在 Windows 上的项目，可以设置 false 取消此功能，把回车保留在版本库中：</p>
-<blockquote>
-<p>$ git config –global core.autocrlf false</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1211,7 +1190,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1227,8 +1206,7 @@
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element">
-    <a onclick="tidioChatApi.open();"><i class="fa fa-comment"></i>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
     Chat
   </a>
   </div>
@@ -1261,12 +1239,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">25k</span>
+    <span title="站点总字数">26k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">23 分钟</span>
+    <span title="站点阅读时长">24 分钟</span>
 </div>
 
         
@@ -1333,7 +1311,6 @@
 
 
 
-  <script src="//code.tidio.co/fu77g4jhsl8phbyjxrre5tdian8vlxfo.js"></script>
 
 
 
